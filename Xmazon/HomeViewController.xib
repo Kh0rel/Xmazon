@@ -19,12 +19,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8nz-J9-XQ9">
                     <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="ce1-Zz-KKH">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </stackView>
-                    </subviews>
+                    <color key="backgroundColor" red="0.97977663251699609" green="1" blue="0.98338466781242329" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
                 <searchBar contentMode="redraw" searchBarStyle="minimal" id="ucj-JZ-4bE">
                     <rect key="frame" x="50" y="58" width="221" height="44"/>

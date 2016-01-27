@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7D3AEA1C58D43F00EE5214 /* ic_view_headline_white_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7D3AE91C58D43F00EE5214 /* ic_view_headline_white_3x.png */; };
+		1C7D3AEC1C58D44F00EE5214 /* ic_shopping_cart_white_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7D3AEB1C58D44F00EE5214 /* ic_shopping_cart_white_3x.png */; };
 		2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3280981C501B700062FAA2 /* HomeViewController.m */; };
 		2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3280991C501B700062FAA2 /* HomeViewController.xib */; };
 		2C42EB2E1C4F8A95000EF687 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C42EB2D1C4F8A95000EF687 /* main.m */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		18B8AF32D57ECA60196CDAC9 /* Pods-Xmazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.debug.xcconfig"; sourceTree = "<group>"; };
+		1C7D3AE91C58D43F00EE5214 /* ic_view_headline_white_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_view_headline_white_3x.png; path = ../../../../../Downloads/ic_view_headline_white_24dp/ios/ic_view_headline_white.imageset/ic_view_headline_white_3x.png; sourceTree = "<group>"; };
+		1C7D3AEB1C58D44F00EE5214 /* ic_shopping_cart_white_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_shopping_cart_white_3x.png; path = ../../../../../Downloads/ic_shopping_cart_white_24dp/ios/ic_shopping_cart_white.imageset/ic_shopping_cart_white_3x.png; sourceTree = "<group>"; };
 		2C3280971C501B700062FAA2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2C3280981C501B700062FAA2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2C3280991C501B700062FAA2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -65,6 +69,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C7D3AE71C58D42100EE5214 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1C7D3AE81C58D43500EE5214 /* Home */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1C7D3AE81C58D43500EE5214 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1C7D3AEB1C58D44F00EE5214 /* ic_shopping_cart_white_3x.png */,
+				1C7D3AE91C58D43F00EE5214 /* ic_view_headline_white_3x.png */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		2C42EB1F1C4F8A95000EF687 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +109,7 @@
 		2C42EB2A1C4F8A95000EF687 /* Xmazon */ = {
 			isa = PBXGroup;
 			children = (
+				1C7D3AE71C58D42100EE5214 /* Images */,
 				2C42EB2F1C4F8A95000EF687 /* AppDelegate.h */,
 				2C42EB301C4F8A95000EF687 /* AppDelegate.m */,
 				2C3280971C501B700062FAA2 /* HomeViewController.h */,
@@ -190,7 +212,7 @@
 		2C42EB201C4F8A95000EF687 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = com.esgi;
 				TargetAttributes = {
 					2C42EB271C4F8A95000EF687 = {
@@ -227,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */,
+				1C7D3AEA1C58D43F00EE5214 /* ic_view_headline_white_3x.png in Resources */,
 				2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */,
+				1C7D3AEC1C58D44F00EE5214 /* ic_shopping_cart_white_3x.png in Resources */,
 				2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +375,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -417,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -428,6 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -446,6 +473,7 @@
 				);
 				INFOPLIST_FILE = XmazonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xmazon.app/Xmazon";
 			};
@@ -461,6 +489,7 @@
 				);
 				INFOPLIST_FILE = XmazonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xmazon.app/Xmazon";
 			};
