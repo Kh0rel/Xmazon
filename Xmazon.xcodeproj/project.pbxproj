@@ -14,14 +14,7 @@
 		2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C42EB381C4F8A95000EF687 /* Images.xcassets */; };
 		2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C42EB3A1C4F8A95000EF687 /* LaunchScreen.xib */; };
 		2C42EB481C4F8A95000EF687 /* XmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C42EB471C4F8A95000EF687 /* XmazonTests.m */; };
-		2CB6115D1C5110730076216D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2CB611521C5110730076216D /* .gitignore */; };
-		2CB6115E1C5110730076216D /* AFHTTPRequestSerializer+OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB611551C5110730076216D /* AFHTTPRequestSerializer+OAuth2.m */; };
-		2CB6115F1C5110730076216D /* AFOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB611571C5110730076216D /* AFOAuth2Manager.m */; };
-		2CB611601C5110730076216D /* AFOAuth2Manager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CB611581C5110730076216D /* AFOAuth2Manager.podspec */; };
-		2CB611611C5110730076216D /* AFOAuth2Manager.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 2CB611591C5110730076216D /* AFOAuth2Manager.xcworkspace */; };
-		2CB611621C5110730076216D /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6115A1C5110730076216D /* CHANGELOG.md */; };
-		2CB611631C5110730076216D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2CB6115B1C5110730076216D /* LICENSE */; };
-		2CB611641C5110730076216D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6115C1C5110730076216D /* README.md */; };
+		6200AAC87B4CF51517915A57 /* libPods-Xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18B8AF32D57ECA60196CDAC9 /* Pods-Xmazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.debug.xcconfig"; sourceTree = "<group>"; };
 		2C3280971C501B700062FAA2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2C3280981C501B700062FAA2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2C3280991C501B700062FAA2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -48,16 +42,8 @@
 		2C42EB411C4F8A95000EF687 /* XmazonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XmazonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C42EB461C4F8A95000EF687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C42EB471C4F8A95000EF687 /* XmazonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XmazonTests.m; sourceTree = "<group>"; };
-		2CB611521C5110730076216D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		2CB611541C5110730076216D /* AFHTTPRequestSerializer+OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestSerializer+OAuth2.h"; sourceTree = "<group>"; };
-		2CB611551C5110730076216D /* AFHTTPRequestSerializer+OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestSerializer+OAuth2.m"; sourceTree = "<group>"; };
-		2CB611561C5110730076216D /* AFOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuth2Manager.h; sourceTree = "<group>"; };
-		2CB611571C5110730076216D /* AFOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth2Manager.m; sourceTree = "<group>"; };
-		2CB611581C5110730076216D /* AFOAuth2Manager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFOAuth2Manager.podspec; sourceTree = "<group>"; };
-		2CB611591C5110730076216D /* AFOAuth2Manager.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = AFOAuth2Manager.xcworkspace; sourceTree = "<group>"; };
-		2CB6115A1C5110730076216D /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		2CB6115B1C5110730076216D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		2CB6115C1C5110730076216D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
+		72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6200AAC87B4CF51517915A57 /* libPods-Xmazon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +68,11 @@
 		2C42EB1F1C4F8A95000EF687 = {
 			isa = PBXGroup;
 			children = (
-				2CB611511C5110730076216D /* AFOAuth2Manager-master */,
 				2C42EB2A1C4F8A95000EF687 /* Xmazon */,
 				2C42EB441C4F8A95000EF687 /* XmazonTests */,
 				2C42EB291C4F8A95000EF687 /* Products */,
+				B45E27A88F5D72407F40A9D8 /* Pods */,
+				F5B1740648E9995F7D9B40EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				2C42EB2F1C4F8A95000EF687 /* AppDelegate.h */,
+				2C42EB301C4F8A95000EF687 /* AppDelegate.m */,
 				2C3280971C501B700062FAA2 /* HomeViewController.h */,
 				2C3280981C501B700062FAA2 /* HomeViewController.m */,
 				2C3280991C501B700062FAA2 /* HomeViewController.xib */,
-				2C42EB301C4F8A95000EF687 /* AppDelegate.m */,
 				2C42EB381C4F8A95000EF687 /* Images.xcassets */,
 				2C42EB3A1C4F8A95000EF687 /* LaunchScreen.xib */,
 				2C42EB2B1C4F8A95000EF687 /* Supporting Files */,
@@ -138,29 +126,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2CB611511C5110730076216D /* AFOAuth2Manager-master */ = {
+		B45E27A88F5D72407F40A9D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2CB611521C5110730076216D /* .gitignore */,
-				2CB611531C5110730076216D /* AFOAuth2Manager */,
-				2CB611581C5110730076216D /* AFOAuth2Manager.podspec */,
-				2CB611591C5110730076216D /* AFOAuth2Manager.xcworkspace */,
-				2CB6115A1C5110730076216D /* CHANGELOG.md */,
-				2CB6115B1C5110730076216D /* LICENSE */,
-				2CB6115C1C5110730076216D /* README.md */,
+				18B8AF32D57ECA60196CDAC9 /* Pods-Xmazon.debug.xcconfig */,
+				44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */,
 			);
-			path = "AFOAuth2Manager-master";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		2CB611531C5110730076216D /* AFOAuth2Manager */ = {
+		F5B1740648E9995F7D9B40EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CB611541C5110730076216D /* AFHTTPRequestSerializer+OAuth2.h */,
-				2CB611551C5110730076216D /* AFHTTPRequestSerializer+OAuth2.m */,
-				2CB611561C5110730076216D /* AFOAuth2Manager.h */,
-				2CB611571C5110730076216D /* AFOAuth2Manager.m */,
+				72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */,
 			);
-			path = AFOAuth2Manager;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C42EB4B1C4F8A95000EF687 /* Build configuration list for PBXNativeTarget "Xmazon" */;
 			buildPhases = (
+				A0AE2214C1366E519A451533 /* Check Pods Manifest.lock */,
 				2C42EB241C4F8A95000EF687 /* Sources */,
 				2C42EB251C4F8A95000EF687 /* Frameworks */,
 				2C42EB261C4F8A95000EF687 /* Resources */,
+				7AD8B587FB0736BCF6759E23 /* Embed Pods Frameworks */,
+				8FB70D049E95B0541963894C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,12 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB6115D1C5110730076216D /* .gitignore in Resources */,
-				2CB611601C5110730076216D /* AFOAuth2Manager.podspec in Resources */,
 				2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */,
-				2CB611631C5110730076216D /* LICENSE in Resources */,
 				2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */,
-				2CB611611C5110730076216D /* AFOAuth2Manager.xcworkspace in Resources */,
 				2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,17 +241,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AD8B587FB0736BCF6759E23 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB70D049E95B0541963894C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0AE2214C1366E519A451533 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C42EB241C4F8A95000EF687 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2C42EB311C4F8A95000EF687 /* AppDelegate.m in Sources */,
-				2CB611621C5110730076216D /* CHANGELOG.md in Sources */,
-				2CB6115F1C5110730076216D /* AFOAuth2Manager.m in Sources */,
-				2CB611641C5110730076216D /* README.md in Sources */,
 				2C42EB2E1C4F8A95000EF687 /* main.m in Sources */,
-				2CB6115E1C5110730076216D /* AFHTTPRequestSerializer+OAuth2.m in Sources */,
 				2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +412,7 @@
 		};
 		2C42EB4C1C4F8A95000EF687 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18B8AF32D57ECA60196CDAC9 /* Pods-Xmazon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Xmazon/Info.plist;
@@ -399,6 +423,7 @@
 		};
 		2C42EB4D1C4F8A95000EF687 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Xmazon/Info.plist;
