@@ -10,6 +10,7 @@ Third step : pod init
 fourth step : add in podFile Frameworks
 
 final step : pod install
+
 ----- FRAMEWORK ------
 
 AFNetworking version : 2.6
