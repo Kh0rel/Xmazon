@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
-                <outlet property="searchDisplayController" destination="sCm-CC-h9b" id="EvR-QK-Hax"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,57 +16,63 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8nz-J9-XQ9">
-                    <rect key="frame" x="0.0" y="100" width="320" height="468"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.97977663251699609" green="1" blue="0.98338466781242329" alpha="1" colorSpace="calibratedRGB"/>
-                </scrollView>
-                <searchBar contentMode="redraw" searchBarStyle="minimal" id="ucj-JZ-4bE">
-                    <rect key="frame" x="50" y="58" width="221" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YWU-Dp-woj">
-                    <rect key="frame" x="271" y="58" width="49" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_shopping_cart_white_3x.png" id="R3B-ch-GZd">
-                    <rect key="frame" x="271" y="58" width="49" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uYr-nG-G3z">
-                    <rect key="frame" x="0.0" y="54" width="50" height="47.5"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_view_headline_white_3x.png" id="KVS-uJ-fvM">
-                    <rect key="frame" x="0.0" y="58.5" width="50" height="43.5"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xmazon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="COX-lL-8sM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xmazon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COX-lL-8sM">
                     <rect key="frame" x="98" y="8" width="126" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="hfH-wQ-6a1"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-oE-Csd">
+                    <rect key="frame" x="0.0" y="518" width="81" height="50"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_home_white_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="CJI-ly-ynA">
+                    <rect key="frame" x="17" y="523" width="47" height="42"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-nn-M6z">
+                    <rect key="frame" x="82" y="518" width="77" height="51"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_store_white_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="dhj-yt-yHX">
+                    <rect key="frame" x="94" y="519" width="53" height="50"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmn-fO-aob">
+                    <rect key="frame" x="167" y="517" width="84" height="51"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_settings_white_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="XTZ-x0-yQG">
+                    <rect key="frame" x="182" y="520" width="54" height="49"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2Z-RJ-pwp">
+                    <rect key="frame" x="236" y="519" width="84" height="48"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_shopping_cart_white_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-Qn-WSk">
+                    <rect key="frame" x="259" y="523" width="48" height="46"/>
+                </imageView>
+                <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="UaG-Tv-1CZ">
+                    <rect key="frame" x="0.0" y="59" width="321" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D41-Uo-Hhz">
+                    <rect key="frame" x="8" y="96" width="304" height="425"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" red="0.36290005887503241" green="0.75005109761916111" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="340" y="436"/>
+            <color key="backgroundColor" red="0.21135117706544415" green="0.62549244347043143" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="COX-lL-8sM" firstAttribute="centerX" secondItem="UaG-Tv-1CZ" secondAttribute="centerX" id="Vib-rI-NAW"/>
+                <constraint firstItem="COX-lL-8sM" firstAttribute="bottom" secondItem="UaG-Tv-1CZ" secondAttribute="top" id="gHn-1k-Pgn"/>
+                <constraint firstItem="COX-lL-8sM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="owH-2C-Gr5"/>
+                <constraint firstAttribute="trailing" secondItem="COX-lL-8sM" secondAttribute="trailing" constant="96" id="uNx-UK-jDI"/>
+                <constraint firstItem="COX-lL-8sM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="98" id="ua3-mk-mPE"/>
+            </constraints>
+            <point key="canvasLocation" x="319" y="417"/>
         </view>
-        <searchDisplayController id="sCm-CC-h9b">
-            <connections>
-                <outlet property="delegate" destination="-1" id="qvC-w1-ozM"/>
-                <outlet property="searchContentsController" destination="-1" id="wVY-yK-b7a"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="t8h-bF-Efm"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="EAR-G5-V7B"/>
-            </connections>
-        </searchDisplayController>
     </objects>
     <resources>
+        <image name="ic_home_white_3x.png" width="72" height="72"/>
+        <image name="ic_settings_white_3x.png" width="72" height="72"/>
         <image name="ic_shopping_cart_white_3x.png" width="72" height="72"/>
-        <image name="ic_view_headline_white_3x.png" width="72" height="72"/>
+        <image name="ic_store_white_3x.png" width="72" height="72"/>
     </resources>
 </document>
