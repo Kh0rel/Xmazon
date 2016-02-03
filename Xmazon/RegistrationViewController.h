@@ -11,5 +11,6 @@
 @interface RegistrationViewController : UIViewController{
     
 }
+@property (strong, nonatomic) IBOutlet UIButton *RegistrationAction;
 
 @end

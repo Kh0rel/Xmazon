@@ -35,7 +35,13 @@
 }
 */
 - (IBAction)passwordNotFoundAction:(id)sender {
-    
+    PasswordNotFoundViewController* v = [PasswordNotFoundViewController new];
+    [self.navigationController pushViewController:v animated:YES];
+}
+- (IBAction)registrationAction:(id)sender {
+
+    RegistrationViewController* v = [RegistrationViewController new];
+    [self.navigationController pushViewController:v animated:YES];
 }
 
 @end

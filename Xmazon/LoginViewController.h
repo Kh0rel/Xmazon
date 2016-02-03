@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RegistrationViewController.h"
+#import "PasswordNotFoundViewController.h"
 @interface LoginViewController : UIViewController
 
 @end

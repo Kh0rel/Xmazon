@@ -50,6 +50,9 @@
                     <rect key="frame" x="174" y="410" width="126" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Inscription"/>
+                    <connections>
+                        <action selector="registrationAction:" destination="-1" eventType="touchUpInside" id="G4v-48-dzZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qnv-ka-sud">
                     <rect key="frame" x="16" y="411" width="150" height="30"/>
