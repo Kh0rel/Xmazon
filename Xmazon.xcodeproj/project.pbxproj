@@ -14,6 +14,10 @@
 		2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C42EB381C4F8A95000EF687 /* Images.xcassets */; };
 		2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C42EB3A1C4F8A95000EF687 /* LaunchScreen.xib */; };
 		2C42EB481C4F8A95000EF687 /* XmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C42EB471C4F8A95000EF687 /* XmazonTests.m */; };
+		2CB557D61C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2CB557D41C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig */; };
+		2CB557D71C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2CB557D51C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig */; };
+		2CB557E51C5F7D9600AC8FF5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */; };
+		2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */; };
 		6200AAC87B4CF51517915A57 /* libPods-Xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +28,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2C42EB271C4F8A95000EF687;
 			remoteInfo = Xmazon;
+		};
+		2CB557DA1C5F413100AC8FF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 405BE7343F78DA89FA00FE32F05D4936;
+			remoteInfo = AFNetworking;
+		};
+		2CB557DC1C5F413100AC8FF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA7DC86189A5C1DE6274490A9C57142A;
+			remoteInfo = "Pods-Xmazon";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,6 +60,12 @@
 		2C42EB411C4F8A95000EF687 /* XmazonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XmazonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C42EB461C4F8A95000EF687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C42EB471C4F8A95000EF687 /* XmazonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XmazonTests.m; sourceTree = "<group>"; };
+		2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
+		2CB557D41C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-Xmazon.debug.xcconfig"; sourceTree = "<group>"; };
+		2CB557D51C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
+		2CB557E21C5F7D9600AC8FF5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
 		72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,9 +113,13 @@
 			isa = PBXGroup;
 			children = (
 				2C42EB2F1C4F8A95000EF687 /* AppDelegate.h */,
+				2CB557E21C5F7D9600AC8FF5 /* LoginViewController.h */,
+				2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */,
+				2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */,
 				2C42EB301C4F8A95000EF687 /* AppDelegate.m */,
 				2C3280971C501B700062FAA2 /* HomeViewController.h */,
 				2C3280981C501B700062FAA2 /* HomeViewController.m */,
+				2CB557CD1C5F413100AC8FF5 /* Pods */,
 				2C3280991C501B700062FAA2 /* HomeViewController.xib */,
 				2C42EB381C4F8A95000EF687 /* Images.xcassets */,
 				2C42EB3A1C4F8A95000EF687 /* LaunchScreen.xib */,
@@ -124,6 +152,49 @@
 				2C42EB461C4F8A95000EF687 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CB557CD1C5F413100AC8FF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557CE1C5F413100AC8FF5 /* Local Podspecs */,
+				2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */,
+				2CB557D21C5F413100AC8FF5 /* Target Support Files */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2CB557CE1C5F413100AC8FF5 /* Local Podspecs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Podspecs";
+			sourceTree = "<group>";
+		};
+		2CB557D01C5F413100AC8FF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557DB1C5F413100AC8FF5 /* libAFNetworking.a */,
+				2CB557DD1C5F413100AC8FF5 /* libPods-Xmazon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CB557D21C5F413100AC8FF5 /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557D31C5F413100AC8FF5 /* Pods-Xmazon */,
+			);
+			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		2CB557D31C5F413100AC8FF5 /* Pods-Xmazon */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557D41C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig */,
+				2CB557D51C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig */,
+			);
+			path = "Pods-Xmazon";
 			sourceTree = "<group>";
 		};
 		B45E27A88F5D72407F40A9D8 /* Pods */ = {
@@ -213,6 +284,12 @@
 			mainGroup = 2C42EB1F1C4F8A95000EF687;
 			productRefGroup = 2C42EB291C4F8A95000EF687 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2CB557D01C5F413100AC8FF5 /* Products */;
+					ProjectRef = 2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C42EB271C4F8A95000EF687 /* Xmazon */,
@@ -221,6 +298,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		2CB557DB1C5F413100AC8FF5 /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 2CB557DA1C5F413100AC8FF5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2CB557DD1C5F413100AC8FF5 /* libPods-Xmazon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-Xmazon.a";
+			remoteRef = 2CB557DC1C5F413100AC8FF5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		2C42EB261C4F8A95000EF687 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -228,6 +322,9 @@
 			files = (
 				2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */,
 				2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */,
+				2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */,
+				2CB557D61C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig in Resources */,
+				2CB557D71C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig in Resources */,
 				2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB557E51C5F7D9600AC8FF5 /* LoginViewController.m in Sources */,
 				2C42EB311C4F8A95000EF687 /* AppDelegate.m in Sources */,
 				2C42EB2E1C4F8A95000EF687 /* main.m in Sources */,
 				2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */,

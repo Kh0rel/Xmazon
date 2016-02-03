@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
+#import "LoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow* window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[HomeViewController new]];
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
     [window makeKeyAndVisible];
     self.window = window;
     return YES;
