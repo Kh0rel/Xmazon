@@ -20,6 +20,8 @@
 		2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */; };
 		2CC6AA2C1C61E02C009425BC /* PasswordNotFoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6AA2A1C61E02C009425BC /* PasswordNotFoundViewController.m */; };
 		2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */; };
+		2CC6AA331C61E1DA009425BC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */; };
+		2CC6AA341C61E1DA009425BC /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */; };
 		6200AAC87B4CF51517915A57 /* libPods-Xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,9 @@
 		2CC6AA291C61E02C009425BC /* PasswordNotFoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordNotFoundViewController.h; sourceTree = "<group>"; };
 		2CC6AA2A1C61E02C009425BC /* PasswordNotFoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordNotFoundViewController.m; sourceTree = "<group>"; };
 		2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordNotFoundViewController.xib; sourceTree = "<group>"; };
+		2CC6AA301C61E1DA009425BC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
 		72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +126,9 @@
 				2CB557E21C5F7D9600AC8FF5 /* LoginViewController.h */,
 				2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */,
 				2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */,
+				2CC6AA301C61E1DA009425BC /* RegistrationViewController.h */,
+				2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */,
+				2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */,
 				2CC6AA291C61E02C009425BC /* PasswordNotFoundViewController.h */,
 				2CC6AA2A1C61E02C009425BC /* PasswordNotFoundViewController.m */,
 				2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */,
@@ -329,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */,
+				2CC6AA341C61E1DA009425BC /* RegistrationViewController.xib in Resources */,
 				2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */,
 				2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */,
 				2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */,
@@ -401,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB557E51C5F7D9600AC8FF5 /* LoginViewController.m in Sources */,
+				2CC6AA331C61E1DA009425BC /* RegistrationViewController.m in Sources */,
 				2C42EB311C4F8A95000EF687 /* AppDelegate.m in Sources */,
 				2C42EB2E1C4F8A95000EF687 /* main.m in Sources */,
 				2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */,
