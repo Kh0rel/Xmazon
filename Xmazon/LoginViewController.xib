@@ -52,9 +52,12 @@
                     <state key="normal" title="Inscription"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qnv-ka-sud">
-                    <rect key="frame" x="16" y="410" width="150" height="30"/>
+                    <rect key="frame" x="16" y="411" width="150" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Mot de passe oublié ?"/>
+                    <connections>
+                        <action selector="passwordNotFoundAction:" destination="-1" eventType="touchUpInside" id="KEB-DA-oXI"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

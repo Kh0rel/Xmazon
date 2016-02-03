@@ -1,22 +1,21 @@
 //
-//  LoginViewController.m
+//  PasswordNotFoundViewController.m
 //  Xmazon
 //
-//  Created by guillaume chieb bouares on 01/02/2016.
+//  Created by guillaume chieb bouares on 03/02/2016.
 //  Copyright © 2016 com.esgi. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "PasswordNotFoundViewController.h"
 
-@interface LoginViewController ()
+@interface PasswordNotFoundViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation PasswordNotFoundViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Xmazon";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,8 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)passwordNotFoundAction:(id)sender {
-    
-}
 
 @end
