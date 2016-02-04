@@ -14,6 +14,16 @@
 		2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C42EB381C4F8A95000EF687 /* Images.xcassets */; };
 		2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C42EB3A1C4F8A95000EF687 /* LaunchScreen.xib */; };
 		2C42EB481C4F8A95000EF687 /* XmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C42EB471C4F8A95000EF687 /* XmazonTests.m */; };
+		2C6CF5DC1C625D30000BFC7B /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CF5DA1C625D30000BFC7B /* ProductListViewController.m */; };
+		2C6CF5DD1C625D30000BFC7B /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CF5DB1C625D30000BFC7B /* ProductListViewController.xib */; };
+		2C6CF5E31C625EBF000BFC7B /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CF5E11C625EBF000BFC7B /* ProductTableViewCell.m */; };
+		2C6CF5E41C625EBF000BFC7B /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CF5E21C625EBF000BFC7B /* ProductTableViewCell.xib */; };
+		2CB557E51C5F7D9600AC8FF5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */; };
+		2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */; };
+		2CC6AA2C1C61E02C009425BC /* PasswordNotFoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6AA2A1C61E02C009425BC /* PasswordNotFoundViewController.m */; };
+		2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */; };
+		2CC6AA331C61E1DA009425BC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */; };
+		2CC6AA341C61E1DA009425BC /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */; };
 		6200AAC87B4CF51517915A57 /* libPods-Xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +34,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2C42EB271C4F8A95000EF687;
 			remoteInfo = Xmazon;
+		};
+		2CB557DA1C5F413100AC8FF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 405BE7343F78DA89FA00FE32F05D4936;
+			remoteInfo = AFNetworking;
+		};
+		2CB557DC1C5F413100AC8FF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA7DC86189A5C1DE6274490A9C57142A;
+			remoteInfo = "Pods-Xmazon";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,6 +66,24 @@
 		2C42EB411C4F8A95000EF687 /* XmazonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XmazonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C42EB461C4F8A95000EF687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C42EB471C4F8A95000EF687 /* XmazonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XmazonTests.m; sourceTree = "<group>"; };
+		2C6CF5D91C625D30000BFC7B /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
+		2C6CF5DA1C625D30000BFC7B /* ProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
+		2C6CF5DB1C625D30000BFC7B /* ProductListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
+		2C6CF5E01C625EBF000BFC7B /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		2C6CF5E11C625EBF000BFC7B /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		2C6CF5E21C625EBF000BFC7B /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
+		2CB557D41C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-Xmazon.debug.xcconfig"; sourceTree = "<group>"; };
+		2CB557D51C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
+		2CB557E21C5F7D9600AC8FF5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2CC6AA291C61E02C009425BC /* PasswordNotFoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordNotFoundViewController.h; sourceTree = "<group>"; };
+		2CC6AA2A1C61E02C009425BC /* PasswordNotFoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordNotFoundViewController.m; sourceTree = "<group>"; };
+		2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordNotFoundViewController.xib; sourceTree = "<group>"; };
+		2CC6AA301C61E1DA009425BC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
 		72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,12 +132,28 @@
 			children = (
 				2C42EB2F1C4F8A95000EF687 /* AppDelegate.h */,
 				2C42EB301C4F8A95000EF687 /* AppDelegate.m */,
+				2CB557E21C5F7D9600AC8FF5 /* LoginViewController.h */,
+				2CB557E31C5F7D9600AC8FF5 /* LoginViewController.m */,
+				2CB557E41C5F7D9600AC8FF5 /* LoginViewController.xib */,
+				2CC6AA301C61E1DA009425BC /* RegistrationViewController.h */,
+				2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */,
+				2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */,
+				2CC6AA291C61E02C009425BC /* PasswordNotFoundViewController.h */,
+				2CC6AA2A1C61E02C009425BC /* PasswordNotFoundViewController.m */,
+				2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */,
 				2C3280971C501B700062FAA2 /* HomeViewController.h */,
 				2C3280981C501B700062FAA2 /* HomeViewController.m */,
 				2C3280991C501B700062FAA2 /* HomeViewController.xib */,
+				2CB557CD1C5F413100AC8FF5 /* Pods */,
 				2C42EB381C4F8A95000EF687 /* Images.xcassets */,
 				2C42EB3A1C4F8A95000EF687 /* LaunchScreen.xib */,
 				2C42EB2B1C4F8A95000EF687 /* Supporting Files */,
+				2C6CF5D91C625D30000BFC7B /* ProductListViewController.h */,
+				2C6CF5DA1C625D30000BFC7B /* ProductListViewController.m */,
+				2C6CF5DB1C625D30000BFC7B /* ProductListViewController.xib */,
+				2C6CF5E01C625EBF000BFC7B /* ProductTableViewCell.h */,
+				2C6CF5E11C625EBF000BFC7B /* ProductTableViewCell.m */,
+				2C6CF5E21C625EBF000BFC7B /* ProductTableViewCell.xib */,
 			);
 			path = Xmazon;
 			sourceTree = "<group>";
@@ -124,6 +182,49 @@
 				2C42EB461C4F8A95000EF687 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CB557CD1C5F413100AC8FF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557CE1C5F413100AC8FF5 /* Local Podspecs */,
+				2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */,
+				2CB557D21C5F413100AC8FF5 /* Target Support Files */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2CB557CE1C5F413100AC8FF5 /* Local Podspecs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Podspecs";
+			sourceTree = "<group>";
+		};
+		2CB557D01C5F413100AC8FF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557DB1C5F413100AC8FF5 /* libAFNetworking.a */,
+				2CB557DD1C5F413100AC8FF5 /* libPods-Xmazon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CB557D21C5F413100AC8FF5 /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557D31C5F413100AC8FF5 /* Pods-Xmazon */,
+			);
+			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		2CB557D31C5F413100AC8FF5 /* Pods-Xmazon */ = {
+			isa = PBXGroup;
+			children = (
+				2CB557D41C5F413100AC8FF5 /* Pods-Xmazon.debug.xcconfig */,
+				2CB557D51C5F413100AC8FF5 /* Pods-Xmazon.release.xcconfig */,
+			);
+			path = "Pods-Xmazon";
 			sourceTree = "<group>";
 		};
 		B45E27A88F5D72407F40A9D8 /* Pods */ = {
@@ -190,7 +291,7 @@
 		2C42EB201C4F8A95000EF687 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = com.esgi;
 				TargetAttributes = {
 					2C42EB271C4F8A95000EF687 = {
@@ -213,6 +314,12 @@
 			mainGroup = 2C42EB1F1C4F8A95000EF687;
 			productRefGroup = 2C42EB291C4F8A95000EF687 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2CB557D01C5F413100AC8FF5 /* Products */;
+					ProjectRef = 2CB557CF1C5F413100AC8FF5 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C42EB271C4F8A95000EF687 /* Xmazon */,
@@ -221,13 +328,35 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		2CB557DB1C5F413100AC8FF5 /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 2CB557DA1C5F413100AC8FF5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2CB557DD1C5F413100AC8FF5 /* libPods-Xmazon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-Xmazon.a";
+			remoteRef = 2CB557DC1C5F413100AC8FF5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		2C42EB261C4F8A95000EF687 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */,
+				2CC6AA341C61E1DA009425BC /* RegistrationViewController.xib in Resources */,
+				2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */,
 				2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */,
+				2C6CF5DD1C625D30000BFC7B /* ProductListViewController.xib in Resources */,
+				2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */,
+				2C6CF5E41C625EBF000BFC7B /* ProductTableViewCell.xib in Resources */,
 				2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,9 +423,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB557E51C5F7D9600AC8FF5 /* LoginViewController.m in Sources */,
+				2CC6AA331C61E1DA009425BC /* RegistrationViewController.m in Sources */,
 				2C42EB311C4F8A95000EF687 /* AppDelegate.m in Sources */,
 				2C42EB2E1C4F8A95000EF687 /* main.m in Sources */,
 				2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */,
+				2C6CF5E31C625EBF000BFC7B /* ProductTableViewCell.m in Sources */,
+				2C6CF5DC1C625D30000BFC7B /* ProductListViewController.m in Sources */,
+				2CC6AA2C1C61E02C009425BC /* PasswordNotFoundViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +485,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -417,6 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -428,6 +564,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -446,6 +583,7 @@
 				);
 				INFOPLIST_FILE = XmazonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xmazon.app/Xmazon";
 			};
@@ -461,6 +599,7 @@
 				);
 				INFOPLIST_FILE = XmazonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esgi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xmazon.app/Xmazon";
 			};
