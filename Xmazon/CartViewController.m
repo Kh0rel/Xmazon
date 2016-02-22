@@ -1,23 +1,22 @@
 //
-//  HomeViewController.m
+//  CartViewController.m
 //  Xmazon
 //
-//  Created by guillaume chieb bouares on 20/01/2016.
-//  Copyright (c) 2016 com.esgi. All rights reserved.
+//  Created by Meryl Barantal on 22/02/2016.
+//  Copyright © 2016 com.esgi. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "CartViewController.h"
 
-@interface HomeViewController ()
-
-@property (weak, nonatomic) IBOutlet UIImageView *goToCart;
+@interface CartViewController ()
 
 @end
-@implementation HomeViewController
+
+@implementation CartViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
