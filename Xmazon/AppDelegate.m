@@ -7,19 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import "FrontViewController.h"
+#import "RearViewController.h"
 #import "LoginViewController.h"
+#import "CategoryViewController.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize revealViewController = _revealViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow* window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
-    [window makeKeyAndVisible];
     self.window = window;
+    
+    UINavigationController* loginNavigationController = [[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
+    UINavigationController* rearNavigationController = [[UINavigationController alloc] initWithRootViewController:[RearViewController new]];
+    
+    SWRevealViewController* revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:loginNavigationController];
+    revealController.delegate = self;
+    
+    self.revealViewController = revealController;
+    
+    self.window.rootViewController = self.revealViewController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
