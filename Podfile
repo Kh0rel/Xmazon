@@ -4,7 +4,10 @@
 # use_frameworks!
 
 target 'Xmazon' do
-pod 'AFNetworking', '~> 2.6'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.0'
+pod 'AFNetworking', '~> 2.5'
+pod 'SWRevealViewController', '~> 2.3.0'
 end
 
 target 'XmazonTests' do

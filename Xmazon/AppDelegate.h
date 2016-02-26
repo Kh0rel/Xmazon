@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SWRevealViewController.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,SWRevealViewControllerDelegate>{
+    @private
+    UIWindow* _window;
+    SWRevealViewController* _revealViewController;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) SWRevealViewController *revealViewController;
 
 
 @end

@@ -43,5 +43,10 @@
     RegistrationViewController* v = [RegistrationViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }
+- (IBAction)loginAction:(id)sender {
+    
+    
+    
+}
 
 @end
