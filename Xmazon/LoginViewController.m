@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Xmazon";
-    // Do any additional setup after loading the view from its nib.
+        // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +36,7 @@
 */
 - (IBAction)passwordNotFoundAction:(id)sender {
     PasswordNotFoundViewController* v = [PasswordNotFoundViewController new];
+    NSLog(@"accept_token : %@", [[XMSessionDataSingleton sharedSession].currentSession objectForKey:@"refresh_token"]);
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)registrationAction:(id)sender {
@@ -45,7 +46,13 @@
 }
 - (IBAction)loginAction:(id)sender {
     
-    
+    XMApiService* apiService = [XMApiService alloc];
+    [apiService loginWithUsername:@"delbut.maxime@gmail.com" andPassword:@"blabla" success:^(id user) {
+        NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
+    } andError:^(NSArray *errors) {
+        NSLog(@"Login FAILED : %@", errors);
+
+    }];
     
 }
 

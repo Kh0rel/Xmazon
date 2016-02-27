@@ -64,10 +64,11 @@
                         <action selector="registrationAction:" destination="-1" eventType="touchUpInside" id="G4v-48-dzZ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="auN-CI-VXG">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="auN-CI-VXG">
                     <rect key="frame" x="109" y="343" width="103" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Connexion" backgroundImage="Background.png">
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Connexion">
                         <color key="titleColor" red="0.97977663250000002" green="1" blue="0.9833846678" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -79,7 +80,4 @@
             <point key="canvasLocation" x="396" y="339"/>
         </view>
     </objects>
-    <resources>
-        <image name="Background.png" width="272" height="42"/>
-    </resources>
 </document>

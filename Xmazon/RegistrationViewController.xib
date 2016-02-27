@@ -84,7 +84,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WK0-M6-xy9">
                     <rect key="frame" x="99" y="445" width="122" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Inscription" backgroundImage="Background.png">
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Inscription">
                         <color key="titleColor" red="0.97977663250000002" green="1" blue="0.9833846678" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -93,7 +94,4 @@
             <point key="canvasLocation" x="185" y="339"/>
         </view>
     </objects>
-    <resources>
-        <image name="Background.png" width="272" height="42"/>
-    </resources>
 </document>

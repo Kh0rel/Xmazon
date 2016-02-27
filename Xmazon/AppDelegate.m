@@ -10,6 +10,7 @@
 #import "FrontViewController.h"
 #import "RearViewController.h"
 #import "LoginViewController.h"
+#import "XMApiService.h"
 #import "CategoryViewController.h"
 @interface AppDelegate ()
 
@@ -34,7 +35,10 @@
     
     self.window.rootViewController = self.revealViewController;
     [self.window makeKeyAndVisible];
-
+    
+    //XMApiService *apiService = [XMApiService new];
+    //[apiService getToken];
+    
     return YES;
 }
 
