@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C064F861C81A5430077C417 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 1C064F851C81A5430077C417 /* Images */; };
 		2C1BBB881C6C7C3000D89B1A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1BBB861C6C7C3000D89B1A /* CategoryViewController.m */; };
 		2C1BBB891C6C7C3000D89B1A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1BBB871C6C7C3000D89B1A /* CategoryViewController.xib */; };
 		2C25358F1C7F468200A9131E /* FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25358D1C7F468200A9131E /* FrontViewController.m */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		18B8AF32D57ECA60196CDAC9 /* Pods-Xmazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.debug.xcconfig"; sourceTree = "<group>"; };
+		1C064F851C81A5430077C417 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		2C1BBB851C6C7C3000D89B1A /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2C1BBB861C6C7C3000D89B1A /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2C1BBB871C6C7C3000D89B1A /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		2C2535961C7FBD1C00A9131E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C064F851C81A5430077C417 /* Images */,
 				2C2535971C7FBD6100A9131E /* reveal-icon.png */,
 			);
 			name = Resources;
@@ -465,6 +468,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C064F861C81A5430077C417 /* Images in Resources */,
 				2C42EB3C1C4F8A95000EF687 /* LaunchScreen.xib in Resources */,
 				2CC6AA341C61E1DA009425BC /* RegistrationViewController.xib in Resources */,
 				2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */,
