@@ -10,7 +10,7 @@
 
 @implementation XMSessionDataSingleton
 @synthesize currentSession = currentSession_;
-
+@synthesize currentUser = currentUser_;
 static XMSessionDataSingleton *sharedSession = nil; //static instance variable
 
 +(XMSessionDataSingleton *)sharedSession

@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "XMUser.h"
 @interface XMSessionDataSingleton : NSObject
 {
     @private
-    NSMutableDictionary* currentSession_;
+    NSDictionary* currentSession_;
+    XMUser* currentUser_;
 }
 
 + (XMSessionDataSingleton *)sharedSession;
 
-@property(strong, nonatomic) NSMutableDictionary *currentSession;
+@property(strong, nonatomic) NSDictionary *currentSession;
+@property(strong, nonatomic) XMUser *currentUser;
+
 
 @end

@@ -24,6 +24,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)subscribe:(id)sender {
+    XMUser *user = [XMUser alloc];
+    //Mettre les param des input
+    user.birthdate = @"31/08/93";
+    user.email = @"blablaaaaa@gmail.com";
+    user.firstname = @"totoa";
+    user.lastname = @"tataa";
+    user.password = @"tototata";
+    
+    XMApiService* apiService = [XMApiService alloc];
+    [apiService subscribe:user withSuccessBlock:^(XMUser *user) {
+        NSLog(@"Subscribe Success : %@", user);
+    } failure:^{
+        NSLog(@"Subscribe FAILED !");
+    }];
+}
 
 /*
 #pragma mark - Navigation

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMUser.h"
+#import "XMApiService.h"
 
 @interface RegistrationViewController : UIViewController{
     
 }
 @property (strong, nonatomic) IBOutlet UIButton *RegistrationAction;
 
+@property (weak, nonatomic) IBOutlet UIButton *button_subscribe;
 @end

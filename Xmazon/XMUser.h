@@ -7,20 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle.h>
 
-@interface XMUser : NSObject
-{
-@private
-    NSString* email_;
-    NSString* password_;
-    NSString* firstname_;
-    NSString* lastname_;
-    NSString* birthdate_;
-}
+@interface XMUser : MTLModel<MTLJSONSerializing>
 
 + (NSDictionary *) JSONKeyPathsByPropertyKey;
+- (NSString *) description;
 
-
+@property (strong, nonatomic) NSString* uid;
 @property (strong, nonatomic) NSString* email;
 @property (strong, nonatomic) NSString* password;
 @property (strong, nonatomic) NSString* firstname;

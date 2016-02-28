@@ -9,15 +9,11 @@
 #import "XMUser.h"
 
 @implementation XMUser
-@synthesize email = email_;
-@synthesize password = password_;
-@synthesize firstname = firstname_;
-@synthesize lastname = lastname_;
-@synthesize birthdate = birthdate_;
 
 + (NSDictionary *) JSONKeyPathsByPropertyKey
 {
     return @{
+             @"uid" : @"uid",
              @"email" : @"email",
              @"password" : @"password",
              @"firstname" : @"firstname",

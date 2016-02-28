@@ -40,20 +40,36 @@
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)registrationAction:(id)sender {
-
+    
     RegistrationViewController* v = [RegistrationViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)loginAction:(id)sender {
-    
     XMApiService* apiService = [XMApiService alloc];
-    [apiService loginWithUsername:@"delbut.maxime@gmail.com" andPassword:@"blabla" success:^(id user) {
-        NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
-    } andError:^(NSArray *errors) {
-        NSLog(@"Login FAILED : %@", errors);
-
-    }];
     
+    [apiService loginWithUsername:@"delbut.maxime@gmail.com"
+                      andPassword:@"blabla"
+                          success:^(id user) {
+                              NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
+                              
+                              [apiService getStores:^(NSArray *stores) {
+                                  NSLog(@"GET ALL STORE Success : %@", stores);
+                                  for (XMStore* store in stores) {
+                                      [apiService getCategoriesByIDStore:store.uid withSuccess:^(NSArray *categories) {
+                                          NSLog(@"GET ALL Categories by store id Success : %@", categories);
+                                      } andFailure:^{
+                                          NSLog(@"GET ALL Categories by store id FAILED");
+                                      }];
+                                  }
+                                  
+                                  
+                              } failure:^{
+                                  NSLog(@"GET ALL STORE FAILED");
+                              }];
+                          } andError:^(NSArray *errors) {
+                              NSLog(@"Login FAILED : %@", errors);
+                              
+                          }];
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "XMApiService.h"
-@implementation XMApiService
+@implementation 	XMApiService
 static NSString* TYPE_POST = @"POST";
 static NSString* TYPE_GET = @"GET";
 
@@ -52,19 +52,82 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
     }] resume];
 }
 
+
 -(void) loginWithUsername:(NSString *)username andPassword:(NSString *)password success:(void (^)(id))successBlock andError:(void (^)(NSArray *))errorBlock
 {
-    NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET};
+    NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET, @"email":username, @"password":password};
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    [manager POST:@"/oauth/token" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-        
-        NSMutableDictionary* resp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-        [XMSessionDataSingleton sharedSession].currentSession = resp;
-        
+    [[manager POST:@"/oauth/token"
+       parameters:parameters
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+              [XMSessionDataSingleton sharedSession].currentSession = responseObject;
+              successBlock(responseObject);
+          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              NSLog(@"Failed to connect API : %@", error);
+          }] resume];
+}
+-(void) subscribe:(XMUser *)user withSuccessBlock:(void (^)(XMUser *))success failure:(void (^)(void))failure
+{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
+    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
+    
+    NSDictionary *parameters = [MTLJSONAdapter JSONDictionaryFromModel:user error:nil];
+    [[manager POST:@"/auth/subscribe" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        //NSDictionary* kzd = responseObject;
+        //NSDictionary* aaz = [responseObject objectForKey:@]
+        XMUser* user = [MTLJSONAdapter modelOfClass:[XMUser class] fromJSONDictionary:[responseObject objectForKey:@"result"] error:nil];
+        [XMSessionDataSingleton sharedSession].currentUser = user;
+        success(user);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Failed to connect API : %@", error);
-    }];
+        failure();
+    }]resume];
+}
 
-    }
+-(void) getUser:(void(^)(void))success failure:(void(^)(void))failure
+{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
+    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
+    
+    [[manager GET:@"/user" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        success();
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure();
+    }] resume];
+}
+
+-(void) getStores:(void (^)(NSArray *))success failure:(void (^)(void))failure
+{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
+    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
+    
+    [[manager GET:@"/store/list" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        NSArray *result = [[MTLJSONAdapter modelsOfClass:[XMStore class] fromJSONArray:[responseObject objectForKey:@"result"] error:nil] mutableCopy];
+        success(result);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure();
+    }] resume];
+}
+
+-(void) getCategoriesByIDStore:(NSString *)uid_store withSuccess:(void (^)(NSArray *))success andFailure:(void (^)(void))failure
+{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
+    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
+    
+    NSDictionary *parameters = @{@"store_uid":uid_store};
+    
+    [[manager GET:@"/category/list" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        NSArray *result = [[MTLJSONAdapter modelsOfClass:[XMCategory class] fromJSONArray:[responseObject objectForKey:@"result"] error:nil] mutableCopy];
+        success(result);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure();
+    }] resume];
+
+}
+
+
 @end

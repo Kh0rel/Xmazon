@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import <Mantle/MTLJSONAdapter.h>
 #import "XMSessionDataSingleton.h"
+#import "XMUser.h"
+#import "XMStore.h"
+#import "XMCategory.h"
 
 @interface XMApiService : NSObject
 
@@ -16,7 +20,13 @@
 -(void)loginWithUsername:(NSString *) username andPassword: (NSString *)password success:(void(^)(id user))successBlock andError:(void(^)(NSArray *errors))errorBlock;
 
 -(void) getToken;
--(void) logout;
--(void) refreshToken;
+
+-(void)subscribe:(XMUser *) user withSuccessBlock:(void(^)(XMUser *user))success failure:(void(^)(void))failure;
+
+-(void)getUser:(void(^)(void))success failure:(void(^)(void))failure;
+
+-(void)getStores:(void(^)(NSArray *stores))success failure:(void(^)(void))failure;
+
+-(void)getCategoriesByIDStore:(NSString *) uid_store withSuccess:(void(^)(NSArray *categories))success andFailure:(void(^)(void))failure;
 
 @end
