@@ -13,6 +13,7 @@
 #import "XMUser.h"
 #import "XMStore.h"
 #import "XMCategory.h"
+#import "XMProduct.h"
 
 @interface XMApiService : NSObject
 
@@ -28,5 +29,10 @@
 -(void)getStores:(void(^)(NSArray *stores))success failure:(void(^)(void))failure;
 
 -(void)getCategoriesByIDStore:(NSString *) uid_store withSuccess:(void(^)(NSArray *categories))success andFailure:(void(^)(void))failure;
+
+-(void)getAllProducts:(void(^)(NSArray *products))success failure:(void(^)(void))failure;
+
+-(void)getProductsByCategoryID:(NSString *) uid_category withSuccess:(void(^)(NSArray *products))success failure:(void(^)(void))failure;
+
 
 @end

@@ -51,12 +51,29 @@
                       andPassword:@"blabla"
                           success:^(id user) {
                               NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
+                              [apiService getAllProducts:^(NSArray *products) {
+                                  NSLog(@"GET ALL products : %@", products);
+                              } failure:^{
+                                  NSLog(@"GET ALL products FAILED");
+                              }];
+                              
+                              
                               
                               [apiService getStores:^(NSArray *stores) {
                                   NSLog(@"GET ALL STORE Success : %@", stores);
                                   for (XMStore* store in stores) {
                                       [apiService getCategoriesByIDStore:store.uid withSuccess:^(NSArray *categories) {
                                           NSLog(@"GET ALL Categories by store id Success : %@", categories);
+                                          
+                                          for (XMCategory* cat in categories) {
+                                                       [apiService getProductsByCategoryID:cat.uid withSuccess:^(NSArray *products) {
+                                                           NSLog(@"GET products by cat : %@", products);
+                                                       } failure:^{
+                                                           NSLog(@"GET products by cat FAILED");
+                                                       }];
+                                          }
+                                 
+                                          
                                       } andFailure:^{
                                           NSLog(@"GET ALL Categories by store id FAILED");
                                       }];
