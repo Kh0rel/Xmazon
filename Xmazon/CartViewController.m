@@ -2,7 +2,7 @@
 //  CartViewController.m
 //  Xmazon
 //
-//  Created by Meryl Barantal on 22/02/2016.
+//  Created by guillaume chieb bouares on 28/02/2016.
 //  Copyright © 2016 com.esgi. All rights reserved.
 //
 
@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"Xmazon - Panier";
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

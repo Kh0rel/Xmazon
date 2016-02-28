@@ -33,22 +33,44 @@
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
+    
     NSString* text = nil;
     if (row == 0) {
-        text = @"Test";
+        text = @"Accueil";
     }
     else if (row == 1){
-        text = @"Test 2";
+        text = @"Profil";
     }
     else if (row == 2){
-        text = @"test 3";
+        text = @"Catégorie";
     }
     else if (row == 3){
-        text = @"test 4";
+        text = @"Historique des commandes";
     }
     cell.textLabel.text = (![text isEqual:nil]) ? text : nil;
     
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SWRevealViewController* revealController = self.revealViewController;
+    UIViewController* newFrontView = nil;
+    
+    
+    if(indexPath.row == 0){
+        newFrontView = [HomeViewController new];
+    }
+    else if (indexPath.row == 1){
+        newFrontView = [ProfileViewController new];
+    }
+    else if (indexPath.row == 2){
+        newFrontView = [CategoryViewController new];
+    }
+    else if (indexPath.row == 3){
+        newFrontView = [OrderHistoryViewController new];
+    }
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontView];
+    [revealController pushFrontViewController:navigationController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

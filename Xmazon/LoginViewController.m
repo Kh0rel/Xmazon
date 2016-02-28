@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Xmazon";
-        // Do any additional setup after loading the view from its nib.
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +46,9 @@
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)loginAction:(id)sender {
-    XMApiService* apiService = [XMApiService alloc];
+    //XMApiService* apiService = [XMApiService alloc];
     
-    [apiService loginWithUsername:@"delbut.maxime@gmail.com"
+    /*[apiService loginWithUsername:@"delbut.maxime@gmail.com"
                       andPassword:@"blabla"
                           success:^(id user) {
                               NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
@@ -86,7 +87,9 @@
                           } andError:^(NSArray *errors) {
                               NSLog(@"Login FAILED : %@", errors);
                               
-                          }];
+                          }];*/
+    HomeViewController* v = [HomeViewController new];
+    [self.navigationController pushViewController:v animated:YES];
 }
 
 @end

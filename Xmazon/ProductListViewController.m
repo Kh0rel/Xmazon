@@ -18,6 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Liste des produits";
+    SWRevealViewController *revealController = [self revealViewController];
+    
+    
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+    
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Images/reveal-icon.png"]
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    
+    self.navigationItem.leftBarButtonItem = revealButtonItem;
+    
+    UIBarButtonItem* cartButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Images/shopping-cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(openCart)];
+    
+    self.navigationItem.rightBarButtonItem = cartButton;
+
     self.name  = [[NSMutableArray alloc] init];
     self.price = [[NSMutableArray alloc] init];
     for (int i = 0; i < 8; i++) {
@@ -59,6 +74,10 @@
 {
     
 }
+-(void)openCart{
 
+    CartViewController* v = [CartViewController new];
+    [self.navigationController pushViewController:v animated:YES];
+}
 
 @end

@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SWRevealViewController.h>
+#import "HomeViewController.h"
+#import "CategoryViewController.h"
+#import "ProfileViewController.h"
+#import "OrderHistoryViewController.h"
 
-@interface RearViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
-
+@interface RearViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
+    NSInteger _presentedRow;
+}
 @property (strong, nonatomic) IBOutlet UITableView *rearTableView;
 
 @end

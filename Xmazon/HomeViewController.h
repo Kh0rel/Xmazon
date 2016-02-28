@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <SWRevealViewController.h>
+#import "CartViewController.h"
 @interface HomeViewController : UIViewController
 
+-(void)openCart;
 @end

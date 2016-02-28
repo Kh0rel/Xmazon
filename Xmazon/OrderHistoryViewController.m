@@ -1,19 +1,18 @@
 //
-//  HomeViewController.m
+//  OrderHistoryViewController.m
 //  Xmazon
 //
-//  Created by guillaume chieb bouares on 20/01/2016.
-//  Copyright (c) 2016 com.esgi. All rights reserved.
+//  Created by guillaume chieb bouares on 28/02/2016.
+//  Copyright © 2016 com.esgi. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "OrderHistoryViewController.h"
 
-@interface HomeViewController ()
-
-@property (weak, nonatomic) IBOutlet UIImageView *goToCart;
+@interface OrderHistoryViewController ()
 
 @end
-@implementation HomeViewController
+
+@implementation OrderHistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

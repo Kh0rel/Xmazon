@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <SWRevealViewController.h>
+#import "CartViewController.h"
 @interface CategoryViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+-(void)openCart;
 @end

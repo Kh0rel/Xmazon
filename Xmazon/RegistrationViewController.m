@@ -13,13 +13,33 @@
 @end
 
 @implementation RegistrationViewController
-
+@synthesize datePicker = _datePicker;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Inscription";
-    // Do any additional setup after loading the view from its nib.
-}
+    
+    [self initDatePicker];
 
+}
+-(void)initDatePicker{
+    self.datePicker = [[UIDatePicker alloc]init];
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    [self.dateTextField setInputView:self.datePicker];
+    
+    UIToolbar* toolbar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [toolbar setTintColor:[UIColor grayColor]];
+    UIBarButtonItem* doneBtn = [[UIBarButtonItem alloc]initWithTitle:@"done" style:UIBarButtonItemStylePlain target:self action:@selector(showSelectedDate)];
+    UIBarButtonItem* space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [toolbar setItems:[NSArray arrayWithObjects:space,doneBtn, nil]];
+    [self.dateTextField setInputAccessoryView:toolbar];
+}
+-(void)showSelectedDate
+{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd/MM/YYYY"];
+    self.dateTextField.text = [NSString stringWithFormat:@"%@",[formatter stringFromDate:self.datePicker.date]];
+    [self.dateTextField resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

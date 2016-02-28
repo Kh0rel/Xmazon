@@ -21,6 +21,5 @@
              @"birthdate" : @"birthdate"
              };
 }
-
 //+ (NSValueTransformer *)birt
 @end

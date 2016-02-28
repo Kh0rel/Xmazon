@@ -26,36 +26,27 @@ static NSString* TYPE_CLIENT_ID = @"client_id";
 static NSString* TYPE_CLIENT_SECRET = @"client_secret";
 
 static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
+static NSString* GRANT_TYPE_LOGIN = @"password";
 //static NSURL* URL = [NSURL URLWithString:URL_STRING];
 
 -(void) getToken
 {
-    NSString* post = [NSString stringWithFormat:@"grant_type=%@&client_id=%@&client_secret=%@", GRANT_TYPE, CLIENT_ID, CLIENT_SECRET];
+    NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET};
     
-    NSString* url = [URL_STRING stringByAppendingString:@"/oauth/token/"];
-    NSURLSession* session = [NSURLSession sharedSession];
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
-    request.HTTPMethod = TYPE_POST;
-    request.HTTPBody = [post dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if(error)
-        {
-            NSLog(@"%@", error);
-        }
-        else
-        {
-            NSMutableDictionary* resp = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            [XMSessionDataSingleton sharedSession].currentSession = resp;
-            NSLog(@"Response : %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-        }
-    }] resume];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
+    [[manager POST:@"/oauth/token"
+        parameters:parameters
+           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+               [XMSessionDataSingleton sharedSession].currentSession = responseObject;
+           } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+               NSLog(@"Failed to connect API : %@", error);
+           }] resume];
 }
 
 
 -(void) loginWithUsername:(NSString *)username andPassword:(NSString *)password success:(void (^)(id))successBlock andError:(void (^)(NSArray *))errorBlock
 {
-    NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET, @"email":username, @"password":password};
+    NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE_LOGIN, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET, @"email":username, @"password":password};
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
     [[manager POST:@"/oauth/token"

@@ -11,9 +11,15 @@
 #import "XMApiService.h"
 
 @interface RegistrationViewController : UIViewController{
-    
+    UIDatePicker* _datePicker;
 }
 @property (strong, nonatomic) IBOutlet UIButton *RegistrationAction;
 
 @property (weak, nonatomic) IBOutlet UIButton *button_subscribe;
+@property (strong, nonatomic) IBOutlet UITextField *dateTextField;
+@property(strong,nonatomic)UIDatePicker* datePicker;
+
+-(void)showSelectedDate;
+-(void)initDatePicker;
 @end
+

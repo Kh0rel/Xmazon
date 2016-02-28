@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SWRevealViewController.h>
 #import "ProductTableViewCell.h"
+#import "CartViewController.h"
 @interface ProductListViewController : UIViewController <UITableViewDelegate, UITableViewDelegate>
 {
     @private
@@ -17,5 +19,5 @@
 
 @property(nonatomic,strong)NSMutableArray* name;
 @property(nonatomic,strong)NSMutableArray* price;
-
+-(void)openCart;
 @end

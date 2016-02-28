@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RegistrationViewController.h"
 #import "PasswordNotFoundViewController.h"
+#import "HomeViewController.h"
 #import "XMSessionDataSingleton.h"
 #import "XMApiService.h"
 @interface LoginViewController : UIViewController
