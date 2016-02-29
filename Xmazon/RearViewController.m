@@ -14,6 +14,7 @@
 
 @implementation RearViewController
 
+@synthesize treeView = _treeView;
 @synthesize rearTableView;
 
 - (void)viewDidLoad {
@@ -78,6 +79,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)loadData {
+    //todo
+    
+}
 
 @end

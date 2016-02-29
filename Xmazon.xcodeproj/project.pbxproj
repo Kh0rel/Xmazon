@@ -22,6 +22,7 @@
 		2C1408D41C83A39100698FF2 /* OrderHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1408D21C83A39100698FF2 /* OrderHistoryViewController.xib */; };
 		2C1BBB881C6C7C3000D89B1A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1BBB861C6C7C3000D89B1A /* CategoryViewController.m */; };
 		2C1BBB891C6C7C3000D89B1A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1BBB871C6C7C3000D89B1A /* CategoryViewController.xib */; };
+		2C2124A81C84F2E7006ABDA5 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124A71C84F2E7006ABDA5 /* RADataObject.m */; };
 		2C2535941C7F475F00A9131E /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2535921C7F475F00A9131E /* RearViewController.m */; };
 		2C2535951C7F475F00A9131E /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2535931C7F475F00A9131E /* RearViewController.xib */; };
 		2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3280981C501B700062FAA2 /* HomeViewController.m */; };
@@ -95,6 +96,8 @@
 		2C1BBB851C6C7C3000D89B1A /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2C1BBB861C6C7C3000D89B1A /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2C1BBB871C6C7C3000D89B1A /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
+		2C2124A61C84F2E7006ABDA5 /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
+		2C2124A71C84F2E7006ABDA5 /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
 		2C2535911C7F475F00A9131E /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
 		2C2535921C7F475F00A9131E /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
 		2C2535931C7F475F00A9131E /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 		2C1408B81C831E0600698FF2 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2C2124A61C84F2E7006ABDA5 /* RADataObject.h */,
+				2C2124A71C84F2E7006ABDA5 /* RADataObject.m */,
 				2C2535911C7F475F00A9131E /* RearViewController.h */,
 				2C2535921C7F475F00A9131E /* RearViewController.m */,
 			);
@@ -683,6 +688,7 @@
 				0347CCDA1C81F6FA00A3D8A0 /* XMApiService.m in Sources */,
 				2C42EB311C4F8A95000EF687 /* AppDelegate.m in Sources */,
 				2C42EB2E1C4F8A95000EF687 /* main.m in Sources */,
+				2C2124A81C84F2E7006ABDA5 /* RADataObject.m in Sources */,
 				0347CCF21C82772900A3D8A0 /* XMProduct.m in Sources */,
 				0347CCE91C826C1600A3D8A0 /* XMStore.m in Sources */,
 				0347CCDD1C8211AF00A3D8A0 /* XMSessionDataSingleton.m in Sources */,
