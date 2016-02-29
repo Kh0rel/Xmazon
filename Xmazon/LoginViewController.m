@@ -37,11 +37,9 @@
 */
 - (IBAction)passwordNotFoundAction:(id)sender {
     PasswordNotFoundViewController* v = [PasswordNotFoundViewController new];
-    NSLog(@"accept_token : %@", [[XMSessionDataSingleton sharedSession].currentSession objectForKey:@"refresh_token"]);
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)registrationAction:(id)sender {
-    
     RegistrationViewController* v = [RegistrationViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }
