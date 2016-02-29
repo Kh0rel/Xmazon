@@ -46,17 +46,19 @@
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)loginAction:(id)sender {
-    //XMApiService* apiService = [XMApiService alloc];
+    XMApiService* apiService = [XMApiService alloc];
     
-    /*[apiService loginWithUsername:@"delbut.maxime@gmail.com"
-                      andPassword:@"blabla"
+    [apiService loginWithUsername:@"toto@gmail.com"
+                      andPassword:@"toto"
                           success:^(id user) {
                               NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
-                              [apiService getAllProducts:^(NSArray *products) {
-                                  NSLog(@"GET ALL products : %@", products);
-                              } failure:^{
-                                  NSLog(@"GET ALL products FAILED");
-                              }];
+//                              
+//                              [apiService refreshtoken];
+//                              [apiService getAllProducts:^(NSArray *products) {
+//                                  NSLog(@"GET ALL products : %@", products);
+//                              } failure:^{
+//                                  NSLog(@"GET ALL products FAILED");
+//                              }];
                               
                               
                               
@@ -87,7 +89,9 @@
                           } andError:^(NSArray *errors) {
                               NSLog(@"Login FAILED : %@", errors);
                               
-                          }];*/
+                          }];
+    
+    
     HomeViewController* v = [HomeViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }

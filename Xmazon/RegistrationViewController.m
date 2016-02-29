@@ -48,10 +48,10 @@
     XMUser *user = [XMUser alloc];
     //Mettre les param des input
     user.birthdate = @"31/08/93";
-    user.email = @"blablaaaaa@gmail.com";
-    user.firstname = @"totoa";
-    user.lastname = @"tataa";
-    user.password = @"tototata";
+    user.email = @"totoa@gmail.com";
+    user.firstname = @"toto";
+    user.lastname = @"tata";
+    user.password = @"toto";
     
     XMApiService* apiService = [XMApiService alloc];
     [apiService subscribe:user withSuccessBlock:^(XMUser *user) {
