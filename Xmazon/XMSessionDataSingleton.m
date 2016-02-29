@@ -11,6 +11,10 @@
 @implementation XMSessionDataSingleton
 @synthesize currentSession = currentSession_;
 @synthesize currentUser = currentUser_;
+@synthesize userDefault = userDefault_;
+@synthesize numberTestRefreshToken = numberTestRefreshToken_;
+
+
 static XMSessionDataSingleton *sharedSession = nil; //static instance variable
 
 +(XMSessionDataSingleton *)sharedSession
@@ -18,7 +22,9 @@ static XMSessionDataSingleton *sharedSession = nil; //static instance variable
     if(sharedSession == nil)
     {
         sharedSession = [[super allocWithZone:NULL] init];
+        sharedSession.numberTestRefreshToken = 0;
     }
     return sharedSession;
 }
+
 @end

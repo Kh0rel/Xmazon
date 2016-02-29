@@ -34,5 +34,6 @@
 
 -(void)getProductsByCategoryID:(NSString *) uid_category withSuccess:(void(^)(NSArray *products))success failure:(void(^)(void))failure;
 
+-(void) refreshtoken:(BOOL) isTokenAppRequired success:(void(^)(void))success failure:(void(^)(void))failure;
 
 @end
