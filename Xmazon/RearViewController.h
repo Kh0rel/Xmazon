@@ -14,12 +14,13 @@
 #import "ProfileViewController.h"
 #import "OrderHistoryViewController.h"
 #import "RADataObject.h"
-
-@interface RearViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,RATreeViewDelegate, RATreeViewDataSource>{
+#import "RATableViewCell.h"
+@interface RearViewController : UIViewController <RATreeViewDelegate, RATreeViewDataSource>{
     NSInteger _presentedRow;
     RATreeView* _treeView;
+    NSArray* _data;
 }
 @property (strong, nonatomic) IBOutlet UITableView *rearTableView;
 @property (strong,nonatomic) RATreeView* treeView;
-
+@property (strong, nonatomic)NSArray* data;
 @end
