@@ -11,14 +11,16 @@
 #import "CartViewController.h"
 #import "XMApiService.h"
 #import "XMCategory.h"
+#import "ProductListViewController.h"
 @interface CategoryViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
-    @public
-    NSArray* _categories;
-    XMStore* _store;
+    
+    NSArray* categories_;
+    XMStore* store_;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* categories;
 @property (strong,nonatomic) XMStore* store;
 -(void)openCart;
 -(void)loadCategoryByStoreID;
+-(void)noElementFound;
 @end

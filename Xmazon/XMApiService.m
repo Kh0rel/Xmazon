@@ -300,7 +300,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
     NSDictionary *parameters = @{@"category_uid":uid_category};
     [[manager GET:@"/product/list" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         [XMSessionDataSingleton sharedSession].numberTestRefreshToken = 0;
-        NSArray *result = [[MTLJSONAdapter modelsOfClass:[XMCategory class] fromJSONArray:[responseObject objectForKey:@"result"] error:nil] mutableCopy];
+        NSArray *result = [[MTLJSONAdapter modelsOfClass:[XMProduct class] fromJSONArray:[responseObject objectForKey:@"result"] error:nil] mutableCopy];
         success(result);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode] == 401 && MAX_TENTATIVE_REFRESH > [XMSessionDataSingleton sharedSession].numberTestRefreshToken)

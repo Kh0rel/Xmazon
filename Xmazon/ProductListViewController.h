@@ -10,14 +10,23 @@
 #import <SWRevealViewController.h>
 #import "ProductTableViewCell.h"
 #import "CartViewController.h"
+#import "XMCategory.h"
+#import "XMStore.h"
+#import "XMProduct.h"
+#import "XMApiService.h"
 @interface ProductListViewController : UIViewController <UITableViewDelegate, UITableViewDelegate>
 {
     @private
-    NSMutableArray* name_;
-    NSMutableArray* price_;
+    XMCategory* category_;
+    XMStore* store_;
+    NSArray* products_;
+    
 }
 
-@property(nonatomic,strong)NSMutableArray* name;
-@property(nonatomic,strong)NSMutableArray* price;
+@property (strong, nonatomic) IBOutlet UITableView *productTableView;
+@property(nonatomic,strong)XMCategory* category;
+@property(nonatomic,strong)XMStore* store;
+@property(nonatomic,strong)NSArray* products;
 -(void)openCart;
+-(void)loadProduct;
 @end
