@@ -13,32 +13,20 @@
 @end
 
 @implementation ProductListViewController
-@synthesize name = name_;
-@synthesize price = price_;
+
+@synthesize category = category_;
+@synthesize store = store_;
+@synthesize products = products_;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Liste des produits";
-    SWRevealViewController *revealController = [self revealViewController];
-    
-    
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
-    
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Images/reveal-icon.png"]
-                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
-    
-    self.navigationItem.leftBarButtonItem = revealButtonItem;
+    [self loadProduct];
+    self.title = self.category.name;
     
     UIBarButtonItem* cartButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Images/shopping-cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(openCart)];
     
     self.navigationItem.rightBarButtonItem = cartButton;
 
-    self.name  = [[NSMutableArray alloc] init];
-    self.price = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 8; i++) {
-        [self.name addObject:@"test"];
-        [self.price addObject:@"price"];
-    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -49,7 +37,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [name_ count];
+    return [self.products count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,9 +49,11 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProductTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.productName.text  = [self.name objectAtIndex:indexPath.row];
-    cell.productPrice.text = [self.price objectAtIndex:indexPath.row];
-    
+
+    XMProduct* product  = [self.products objectAtIndex:indexPath.row];
+
+    cell.productName.text  = product.name;
+    cell.productPrice.text = [NSString stringWithFormat:@"%.02f €",product.price];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,6 +68,16 @@
 
     CartViewController* v = [CartViewController new];
     [self.navigationController pushViewController:v animated:YES];
+}
+-(void)loadProduct{
+    XMApiService* apiService = [[XMApiService alloc]init];
+    
+    [apiService getProductsByCategoryID:self.category.uid withSuccess:^(NSArray *products) {
+        self.products = products;
+        [self.productTableView reloadData];
+    } failure:^{
+        //nop
+    }];
 }
 
 @end

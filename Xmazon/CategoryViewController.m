@@ -13,12 +13,12 @@
 @end
 
 @implementation CategoryViewController
-@synthesize store = _store;
-@synthesize categories = _categories;
+@synthesize store = store_;
+@synthesize categories = categories_;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.store.name;
-    
+    [self loadCategoryByStoreID];
     SWRevealViewController *revealController = [self revealViewController];
     
     
@@ -43,9 +43,19 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 2;
+    
+    return [self.categories count];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ProductListViewController* productView = [[ProductListViewController alloc]init];
+    productView.store = self.store;
+    productView.category = [self.categories objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:productView animated:YES];
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -63,15 +73,27 @@
     CartViewController* v = [CartViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }
+
 -(void)loadCategoryByStoreID{
     XMApiService* apiService = [[XMApiService alloc]init];
     [apiService getCategoriesByIDStore:self.store.uid withSuccess:^(NSArray *categories) {
         self.categories = categories;
+        if([self.categories count] == 0)
+            [self noElementFound];
         [self.tableView reloadData];
     } andFailure:^{
         
     }];
     
 }
-
+-(void)noElementFound{
+    
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Erreur" message:@"Pas de catégorie dans cette boutique" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+}
 @end

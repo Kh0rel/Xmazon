@@ -41,6 +41,7 @@
 		2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6AA2B1C61E02C009425BC /* PasswordNotFoundViewController.xib */; };
 		2CC6AA331C61E1DA009425BC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */; };
 		2CC6AA341C61E1DA009425BC /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */; };
+		2CF117321C86410E0003BDDF /* XMCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF117311C86410E0003BDDF /* XMCart.m */; };
 		6200AAC87B4CF51517915A57 /* libPods-Xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		2CC6AA301C61E1DA009425BC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		2CC6AA311C61E1DA009425BC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		2CC6AA321C61E1DA009425BC /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		2CF117301C86410E0003BDDF /* XMCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMCart.h; sourceTree = "<group>"; };
+		2CF117311C86410E0003BDDF /* XMCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMCart.m; sourceTree = "<group>"; };
 		44F8937CF89A2824EC1D7DE4 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
 		72C71F204038C01E3F4EC934 /* libPods-Xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,6 +209,8 @@
 				0347CCEB1C8272ED00A3D8A0 /* XMCategory.m */,
 				0347CCF01C82772900A3D8A0 /* XMProduct.h */,
 				0347CCF11C82772900A3D8A0 /* XMProduct.m */,
+				2CF117301C86410E0003BDDF /* XMCart.h */,
+				2CF117311C86410E0003BDDF /* XMCart.m */,
 			);
 			name = Modele;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				0347CCE11C82172200A3D8A0 /* XMUser.m in Sources */,
 				2C6CF5DC1C625D30000BFC7B /* ProductListViewController.m in Sources */,
 				2C1408CB1C83A00D00698FF2 /* CartViewController.m in Sources */,
+				2CF117321C86410E0003BDDF /* XMCart.m in Sources */,
 				2CC6AA2C1C61E02C009425BC /* PasswordNotFoundViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
