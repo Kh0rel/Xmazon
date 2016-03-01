@@ -330,4 +330,38 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
         }] resume];
 }
 
+-(void) cheatGetAllProducts:(void (^)(NSArray *))success failure:(void (^)(void))failure
+{
+    [XMSessionDataSingleton sharedSession].countRequestSend = 0;
+    NSMutableArray *productList = [[NSMutableArray alloc] init];
+    [self getStores:^(NSArray *stores) {
+                                          NSLog(@"GET ALL STORE Success : %@", stores);
+                                          for (XMStore* store in stores) {
+                                              [self getCategoriesByIDStore:store.uid withSuccess:^(NSArray *categories) {
+                                                  NSLog(@"GET ALL Categories by store id Success : %@", categories);
+        
+                                                  for (XMCategory* cat in categories) {
+                                                      [XMSessionDataSingleton sharedSession].countRequestSend++;
+                                                               [self getProductsByCategoryID:cat.uid withSuccess:^(NSArray *products) {
+                                                                   [XMSessionDataSingleton sharedSession].countRequestDone++;
+                                                                   [productList addObject:products];
+                                                                   if([XMSessionDataSingleton sharedSession].countRequestDone == [XMSessionDataSingleton sharedSession].countRequestSend)
+                                                                   {
+                                                                       success(productList);
+                                                                   }
+                                                               } failure:^{
+                                                                   NSLog(@"GET products by cat FAILED");
+                                                               }];
+                                                  }
+                                              } andFailure:^{
+                                                  NSLog(@"GET ALL Categories by store id FAILED");
+                                              }];
+                                          }
+        
+        
+                                      } failure:^{
+                                          NSLog(@"GET ALL STORE FAILED");
+                                      }];
+}
+
 @end

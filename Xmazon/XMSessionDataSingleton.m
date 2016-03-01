@@ -13,6 +13,9 @@
 @synthesize currentUser = currentUser_;
 //@synthesize userDefault = userDefault_;
 @synthesize numberTestRefreshToken = numberTestRefreshToken_;
+@synthesize countRequestSend = countRequestSend_;
+@synthesize countRequestDone = countRequestDone_;
+@synthesize countRequestFailed = countRequestFailed_;
 
 
 static XMSessionDataSingleton *sharedSession = nil; //static instance variable

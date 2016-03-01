@@ -21,7 +21,7 @@ static NSString* USERDEFAULT_KEY_USER = @"user";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Accueil";
-   // [self loadProduct];
+    [self loadProduct];
     SWRevealViewController *revealController = [self revealViewController];
     
     
@@ -48,7 +48,7 @@ static NSString* USERDEFAULT_KEY_USER = @"user";
 }
 -(void)loadProduct{
     XMApiService* apiService = [[XMApiService alloc]init];
-    [apiService getAllProducts:^(NSArray *products) {
+    [apiService cheatGetAllProducts:^(NSArray *products) {
         self.products = products;
         NSLog(@"%@",products);
         [self.productTableView reloadData];
