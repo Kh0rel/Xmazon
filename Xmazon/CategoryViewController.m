@@ -13,10 +13,11 @@
 @end
 
 @implementation CategoryViewController
-
+@synthesize store = _store;
+@synthesize categories = _categories;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Xmazon - Catégorie";
+    self.title = self.store.name;
     
     SWRevealViewController *revealController = [self revealViewController];
     
@@ -53,13 +54,24 @@
     if(!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
-    
+    XMCategory* category = [self.categories objectAtIndex:indexPath.row];
+    cell.textLabel.text = category.name;
     return cell;
 }
 -(void)openCart{
     
     CartViewController* v = [CartViewController new];
     [self.navigationController pushViewController:v animated:YES];
+}
+-(void)loadCategoryByStoreID{
+    XMApiService* apiService = [[XMApiService alloc]init];
+    [apiService getCategoriesByIDStore:self.store.uid withSuccess:^(NSArray *categories) {
+        self.categories = categories;
+        [self.tableView reloadData];
+    } andFailure:^{
+        
+    }];
+    
 }
 
 @end

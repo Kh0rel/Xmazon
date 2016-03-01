@@ -8,22 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <SWRevealViewController.h>
-#import <RATreeView.h>
 
 #import "HomeViewController.h"
 #import "CategoryViewController.h"
 #import "ProfileViewController.h"
 #import "OrderHistoryViewController.h"
-#import "XMDataMenu.h"
-#import "RATableViewCell.h"
 #import "XMSessionDataSingleton.h"
 #import "XMApiService.h"
-@interface RearViewController : UIViewController <RATreeViewDelegate, RATreeViewDataSource>{
-    NSInteger _presentedRow;
-    RATreeView* _treeView;
-    NSArray* _data;
+#import "XMStore.h"
+@interface RearViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
+    NSArray* _stores;
 }
 @property (strong, nonatomic) IBOutlet UITableView *rearTableView;
-@property (strong,nonatomic) RATreeView* treeView;
-@property (strong, nonatomic)NSArray* data;
+@property (strong, nonatomic) NSArray* stores;
+- (void)loadStore;
 @end

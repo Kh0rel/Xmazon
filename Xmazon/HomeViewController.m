@@ -15,9 +15,12 @@
 @end
 @implementation HomeViewController
 
+@synthesize products = _products;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Accueil";
+    [self loadProduct];
     SWRevealViewController *revealController = [self revealViewController];
     
     
@@ -26,12 +29,11 @@
     
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Images/reveal-icon.png"]
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
-    
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
     UIBarButtonItem* cartButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Images/shopping-cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(openCart)];
-    
     self.navigationItem.rightBarButtonItem = cartButton;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +45,32 @@
     CartViewController* v = [CartViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }
+-(void)loadProduct{
+    XMApiService* apiService = [[XMApiService alloc]init];
+    [apiService getAllProducts:^(NSArray *products) {
+        self.products = products;
+        NSLog(@"%@",products);
+        [self.productTableView reloadData];
+    } failure:^{
+        NSLog(@"test");
+    }];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.products count];
+}
+
+static NSString* const kCellReuseIdentifier = @"CoolId";
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellReuseIdentifier];
+    if(!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCellReuseIdentifier];
+    }
+    XMProduct* product = [self.products objectAtIndex:indexPath.row];
+    cell.textLabel.text = product.name;
+    return cell;
+}
+
 /*
 #pragma mark - Navigation
 

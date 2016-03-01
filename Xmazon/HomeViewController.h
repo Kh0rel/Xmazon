@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <SWRevealViewController.h>
 #import "CartViewController.h"
-@interface HomeViewController : UIViewController
+#import "XMSessionDataSingleton.h"
+#import "XMApiService.h"
+#import "XMProduct.h"
+@interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    NSArray* _products;
+}
+@property(strong,nonatomic)NSArray* products;
+@property (strong, nonatomic) IBOutlet UITableView *productTableView;
 
 -(void)openCart;
+-(void)loadProduct;
 @end

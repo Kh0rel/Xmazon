@@ -48,18 +48,17 @@
     
     if( [self verifField] )
     {
-        NSLog(@"%@",[[self tfEmail] text]);
         [apiService loginWithUsername:[[self tfEmail] text]
                     andPassword:[[self tfPwd] text] success:^(id user) {
                         HomeViewController* v = [HomeViewController new];
+        
                         [self.navigationController pushViewController:v animated:YES];
                     } andError:^(void) {
                         [self displayToastWithMessage:@"Bad login"];
                     }];
-
     }
-    
-    
+
+
 //    [apiService loginWithUsername:@"toto@gmail.com"
 //                      andPassword:@"toto"
 //                          success:^(id user) {

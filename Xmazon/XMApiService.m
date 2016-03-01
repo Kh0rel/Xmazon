@@ -258,7 +258,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 -(void) getAllProducts:(void (^)(NSArray *))success failure:(void (^)(void))failure
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[XMSessionDataSingleton sharedSession].userDefault valueForKey:KEY_ACCESS_TOKEN];
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     
     [[manager GET:@"/product/list" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
