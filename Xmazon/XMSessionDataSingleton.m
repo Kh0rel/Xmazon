@@ -16,6 +16,7 @@
 @synthesize countRequestSend = countRequestSend_;
 @synthesize countRequestDone = countRequestDone_;
 @synthesize countRequestFailed = countRequestFailed_;
+@synthesize products = products_;
 
 
 static XMSessionDataSingleton *sharedSession = nil; //static instance variable

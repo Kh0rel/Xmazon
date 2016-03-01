@@ -20,6 +20,7 @@
     int countRequestSend_;
     int countRequestDone_;
     int countRequestFailed_;
+    NSArray* products_;
 }
 
 + (XMSessionDataSingleton *)sharedSession;
@@ -31,6 +32,6 @@
 @property(nonatomic, nonatomic) int countRequestSend;
 @property(nonatomic, nonatomic) int countRequestDone;
 @property(nonatomic, nonatomic) int countRequestFailed;
-
+@property(nonatomic, nonatomic) NSArray* products;
 
 @end

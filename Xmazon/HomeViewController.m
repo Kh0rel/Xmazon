@@ -48,13 +48,25 @@ static NSString* USERDEFAULT_KEY_USER = @"user";
 }
 -(void)loadProduct{
     XMApiService* apiService = [[XMApiService alloc]init];
-    [apiService cheatGetAllProducts:^(NSArray *products) {
-        self.products = products;
-        NSLog(@"%@",products);
+    if([XMSessionDataSingleton sharedSession].products == nil) {
+        [apiService cheatGetAllProducts:^(NSArray *products) {
+            self.products = products;
+            [XMSessionDataSingleton sharedSession].products = self.products;
+            NSLog(@"%@",self.products);
+            [self.productTableView reloadData];
+        } failure:^{
+            NSLog(@"test");
+        }];
+    }else {
+        self.products = [XMSessionDataSingleton sharedSession].products;
+    }
+    
+    if(self.products){
+        NSLog(@"%@",self.products);
         [self.productTableView reloadData];
-    } failure:^{
-        NSLog(@"test");
-    }];
+    }
+    
+    
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.products count];
