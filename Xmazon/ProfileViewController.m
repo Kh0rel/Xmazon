@@ -78,8 +78,8 @@ static NSString* USERDEFAULT_KEY_USER = @"user";
     //TODO
 }
 - (IBAction)deconnectAction:(id)sender {
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+   // NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:USERDEFAULT_KEY_USER];
 //    UIViewController *prevVC = [self.navigationController.viewControllers objectAtIndex:1];
 //
     LoginViewController* loginController = [[LoginViewController alloc] init];

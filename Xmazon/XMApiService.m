@@ -344,7 +344,9 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
                                                       [XMSessionDataSingleton sharedSession].countRequestSend++;
                                                                [self getProductsByCategoryID:cat.uid withSuccess:^(NSArray *products) {
                                                                    [XMSessionDataSingleton sharedSession].countRequestDone++;
-                                                                   [productList addObject:products];
+                                                                   for (XMProduct* pr in products) {
+                                                                       [productList addObject:pr];
+                                                                   }
                                                                    if([XMSessionDataSingleton sharedSession].countRequestDone == [XMSessionDataSingleton sharedSession].countRequestSend)
                                                                    {
                                                                        success(productList);
