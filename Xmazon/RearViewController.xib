@@ -19,7 +19,9 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1dL-fv-qbM">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.89490609217171713" green="0.89490609217171713" blue="0.89490609217171713" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="separatorColor" red="0.90664457070707061" green="0.90664457070707061" blue="0.90664457070707061" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="sectionIndexBackgroundColor" red="0.78536559866500821" green="0.78963232127009531" blue="0.81311158459595956" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="s4s-VJ-rjq"/>
                         <outlet property="delegate" destination="-1" id="RXP-hk-ZME"/>
