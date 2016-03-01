@@ -25,6 +25,7 @@
 		2C2124A81C84F2E7006ABDA5 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124A71C84F2E7006ABDA5 /* RADataObject.m */; };
 		2C2124AC1C84F86D006ABDA5 /* RATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124AB1C84F86D006ABDA5 /* RATableViewCell.m */; };
 		2C2124AE1C84FC92006ABDA5 /* RATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2124AD1C84FC92006ABDA5 /* RATableViewCell.xib */; };
+		2C2124B61C8511E8006ABDA5 /* XMDataMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124B51C8511E8006ABDA5 /* XMDataMenu.m */; };
 		2C2535941C7F475F00A9131E /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2535921C7F475F00A9131E /* RearViewController.m */; };
 		2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3280981C501B700062FAA2 /* HomeViewController.m */; };
 		2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3280991C501B700062FAA2 /* HomeViewController.xib */; };
@@ -102,6 +103,8 @@
 		2C2124AA1C84F86D006ABDA5 /* RATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATableViewCell.h; sourceTree = "<group>"; };
 		2C2124AB1C84F86D006ABDA5 /* RATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATableViewCell.m; sourceTree = "<group>"; };
 		2C2124AD1C84FC92006ABDA5 /* RATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RATableViewCell.xib; sourceTree = "<group>"; };
+		2C2124B41C8511E8006ABDA5 /* XMDataMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDataMenu.h; sourceTree = "<group>"; };
+		2C2124B51C8511E8006ABDA5 /* XMDataMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDataMenu.m; sourceTree = "<group>"; };
 		2C2535911C7F475F00A9131E /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
 		2C2535921C7F475F00A9131E /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
 		2C3280971C501B700062FAA2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				2C2124A71C84F2E7006ABDA5 /* RADataObject.m */,
 				2C2535911C7F475F00A9131E /* RearViewController.h */,
 				2C2535921C7F475F00A9131E /* RearViewController.m */,
+				2C2124B41C8511E8006ABDA5 /* XMDataMenu.h */,
+				2C2124B51C8511E8006ABDA5 /* XMDataMenu.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -703,6 +708,7 @@
 				2C2535941C7F475F00A9131E /* RearViewController.m in Sources */,
 				0347CCEC1C8272ED00A3D8A0 /* XMCategory.m in Sources */,
 				2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */,
+				2C2124B61C8511E8006ABDA5 /* XMDataMenu.m in Sources */,
 				2C6CF5E31C625EBF000BFC7B /* ProductTableViewCell.m in Sources */,
 				0347CCE11C82172200A3D8A0 /* XMUser.m in Sources */,
 				2C6CF5DC1C625D30000BFC7B /* ProductListViewController.m in Sources */,

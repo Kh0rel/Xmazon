@@ -51,5 +51,7 @@
   [children removeObject:child];
   self.children = [children copy];
 }
-
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Name : %@ , Childer { %@ }",self.name , self.children];
+}
 @end

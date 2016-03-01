@@ -31,5 +31,6 @@
 
 - (void)addChild:(id)child;
 - (void)removeChild:(id)child;
+- (NSString *)description;
 
 @end

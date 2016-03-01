@@ -61,10 +61,20 @@
 {
     return 44;
 }
+/*
+- (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item{
+    SWRevealViewController* revealController = self.revealViewController;
+    UIViewController* newFrontView = nil;
+    
+    if([item isKindOfClass:[RADataObject class]]){
+        if ( [((RADataObject *)item).name isEqualToString:@"Phones"]){
 
-- (BOOL)treeView:(RATreeView *)treeView canEditRowForItem:(id)item
-{
-    return YES;
+             newFrontView = [ProfileViewController new];
+        }
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontView];
+        [revealController pushFrontViewController:navigationController animated:YES];
+    }
+    
 }
 
 - (void)treeView:(RATreeView *)treeView willExpandRowForItem:(id)item
@@ -79,10 +89,10 @@
     [cell setAdditionButtonHidden:YES animated:YES];
 }
 
-
+/*
 - (UITableViewCell *)treeView:(RATreeView *)treeView cellForItem:(id)item
 {
-    RADataObject *dataObject = item;
+   /* RADataObject *dataObject = item;
     
     NSInteger level = [self.treeView levelForCellForItem:item];
     NSInteger numberOfChildren = [dataObject.children count];
@@ -103,7 +113,7 @@
         [weakSelf.treeView insertItemsAtIndexes:[NSIndexSet indexSetWithIndex:0] inParent:dataObject withAnimation:RATreeViewRowAnimationLeft];
         [weakSelf.treeView reloadRowsForItems:@[dataObject] withRowAnimation:RATreeViewRowAnimationNone];
     };
-    
+ 
     return cell;
 }
 
@@ -126,6 +136,10 @@
     
     return data.children[index];
 }
+ */
+
+
+
 /*
  - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
  return 4;
@@ -177,14 +191,44 @@
  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontView];
  [revealController pushFrontViewController:navigationController animated:YES];
  }
- */
+ 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)loadStore{
+        XMApiService* apiService = [XMApiService alloc];
+    [apiService getStores:^(NSArray *stores) {
+        NSLog(@"GET ALL STORE Success : %@", stores);
+        for (XMStore* store in stores) {
+            /*
+            [apiService getCategoriesByIDStore:store.uid withSuccess:^(NSArray *categories) {
+                NSLog(@"GET ALL Categories by store id Success : %@", categories);
+                
+                for (XMCategory* cat in categories) {
+                    [apiService getProductsByCategoryID:cat.uid withSuccess:^(NSArray *products) {
+                        NSLog(@"GET products by cat : %@", products);
+                    } failure:^{
+                        NSLog(@"GET products by cat FAILED");
+                    }];
+                }
+                
+                
+            } andFailure:^{
+                NSLog(@"GET ALL Categories by store id FAILED");
+            }];
+        }
+        
+        
+    } failure:^{
+        NSLog(@"GET ALL STORE FAILED");
+    }];
+
+}
+*/
 
 - (void)loadData {
-    RADataObject *phone1 = [RADataObject dataObjectWithName:@"Phone 1" children:nil];
+   /* RADataObject *phone1 = [RADataObject dataObjectWithName:@"Phone 1" children:nil];
     RADataObject *phone2 = [RADataObject dataObjectWithName:@"Phone 2" children:nil];
     RADataObject *phone3 = [RADataObject dataObjectWithName:@"Phone 3" children:nil];
     RADataObject *phone4 = [RADataObject dataObjectWithName:@"Phone 4" children:nil];
@@ -204,9 +248,9 @@
                                                      children:[NSArray arrayWithObjects:computer1, computer2, computer3, nil]];
     RADataObject *car = [RADataObject dataObjectWithName:@"Cars" children:nil];
     RADataObject *bike = [RADataObject dataObjectWithName:@"Bikes" children:nil];
-    RADataObject *house = [RADataObject dataObjectWithName:@"Houses" children:nil];
+    RADataObject *house = [RADataObject dataObjectWithName:@"Houses" children:nil];*/
     
-    self.data = [NSArray arrayWithObjects:phone, computer, car, bike, house, nil];
+    //self.data = [NSArray arrayWithObjects:phone,computer, car, bike, house, nil];
     
 }
 - (void)refreshControlChanged:(UIRefreshControl *)refreshControl
