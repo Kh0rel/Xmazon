@@ -22,10 +22,7 @@
 		2C1408D41C83A39100698FF2 /* OrderHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1408D21C83A39100698FF2 /* OrderHistoryViewController.xib */; };
 		2C1BBB881C6C7C3000D89B1A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1BBB861C6C7C3000D89B1A /* CategoryViewController.m */; };
 		2C1BBB891C6C7C3000D89B1A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1BBB871C6C7C3000D89B1A /* CategoryViewController.xib */; };
-		2C2124A81C84F2E7006ABDA5 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124A71C84F2E7006ABDA5 /* RADataObject.m */; };
-		2C2124AC1C84F86D006ABDA5 /* RATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124AB1C84F86D006ABDA5 /* RATableViewCell.m */; };
-		2C2124AE1C84FC92006ABDA5 /* RATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2124AD1C84FC92006ABDA5 /* RATableViewCell.xib */; };
-		2C2124B61C8511E8006ABDA5 /* XMDataMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2124B51C8511E8006ABDA5 /* XMDataMenu.m */; };
+		2C2124BD1C852D6C006ABDA5 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2124BC1C852D6C006ABDA5 /* RearViewController.xib */; };
 		2C2535941C7F475F00A9131E /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2535921C7F475F00A9131E /* RearViewController.m */; };
 		2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3280981C501B700062FAA2 /* HomeViewController.m */; };
 		2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3280991C501B700062FAA2 /* HomeViewController.xib */; };
@@ -98,13 +95,7 @@
 		2C1BBB851C6C7C3000D89B1A /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2C1BBB861C6C7C3000D89B1A /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2C1BBB871C6C7C3000D89B1A /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
-		2C2124A61C84F2E7006ABDA5 /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
-		2C2124A71C84F2E7006ABDA5 /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
-		2C2124AA1C84F86D006ABDA5 /* RATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATableViewCell.h; sourceTree = "<group>"; };
-		2C2124AB1C84F86D006ABDA5 /* RATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATableViewCell.m; sourceTree = "<group>"; };
-		2C2124AD1C84FC92006ABDA5 /* RATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RATableViewCell.xib; sourceTree = "<group>"; };
-		2C2124B41C8511E8006ABDA5 /* XMDataMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDataMenu.h; sourceTree = "<group>"; };
-		2C2124B51C8511E8006ABDA5 /* XMDataMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDataMenu.m; sourceTree = "<group>"; };
+		2C2124BC1C852D6C006ABDA5 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
 		2C2535911C7F475F00A9131E /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
 		2C2535921C7F475F00A9131E /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
 		2C3280971C501B700062FAA2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -231,7 +222,7 @@
 		2C138D5E1C7C44E00053DBB5 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				2C2124AD1C84FC92006ABDA5 /* RATableViewCell.xib */,
+				2C2124BC1C852D6C006ABDA5 /* RearViewController.xib */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -239,14 +230,8 @@
 		2C1408B81C831E0600698FF2 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				2C2124AA1C84F86D006ABDA5 /* RATableViewCell.h */,
-				2C2124AB1C84F86D006ABDA5 /* RATableViewCell.m */,
-				2C2124A61C84F2E7006ABDA5 /* RADataObject.h */,
-				2C2124A71C84F2E7006ABDA5 /* RADataObject.m */,
 				2C2535911C7F475F00A9131E /* RearViewController.h */,
 				2C2535921C7F475F00A9131E /* RearViewController.m */,
-				2C2124B41C8511E8006ABDA5 /* XMDataMenu.h */,
-				2C2124B51C8511E8006ABDA5 /* XMDataMenu.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -620,11 +605,11 @@
 				2CC6AA2D1C61E02C009425BC /* PasswordNotFoundViewController.xib in Resources */,
 				2C42EB391C4F8A95000EF687 /* Images.xcassets in Resources */,
 				2C1408CC1C83A00D00698FF2 /* CartViewController.xib in Resources */,
-				2C2124AE1C84FC92006ABDA5 /* RATableViewCell.xib in Resources */,
 				2C1408BE1C83613F00698FF2 /* ProfileViewController.xib in Resources */,
 				2C6CF5DD1C625D30000BFC7B /* ProductListViewController.xib in Resources */,
 				2C1BBB891C6C7C3000D89B1A /* CategoryViewController.xib in Resources */,
 				2C1408D41C83A39100698FF2 /* OrderHistoryViewController.xib in Resources */,
+				2C2124BD1C852D6C006ABDA5 /* RearViewController.xib in Resources */,
 				2CB557E61C5F7D9600AC8FF5 /* LoginViewController.xib in Resources */,
 				2C6CF5E41C625EBF000BFC7B /* ProductTableViewCell.xib in Resources */,
 				2C32809B1C501B700062FAA2 /* HomeViewController.xib in Resources */,
@@ -698,7 +683,6 @@
 				0347CCDA1C81F6FA00A3D8A0 /* XMApiService.m in Sources */,
 				2C42EB311C4F8A95000EF687 /* AppDelegate.m in Sources */,
 				2C42EB2E1C4F8A95000EF687 /* main.m in Sources */,
-				2C2124A81C84F2E7006ABDA5 /* RADataObject.m in Sources */,
 				0347CCF21C82772900A3D8A0 /* XMProduct.m in Sources */,
 				0347CCE91C826C1600A3D8A0 /* XMStore.m in Sources */,
 				0347CCDD1C8211AF00A3D8A0 /* XMSessionDataSingleton.m in Sources */,
@@ -708,12 +692,10 @@
 				2C2535941C7F475F00A9131E /* RearViewController.m in Sources */,
 				0347CCEC1C8272ED00A3D8A0 /* XMCategory.m in Sources */,
 				2C32809A1C501B700062FAA2 /* HomeViewController.m in Sources */,
-				2C2124B61C8511E8006ABDA5 /* XMDataMenu.m in Sources */,
 				2C6CF5E31C625EBF000BFC7B /* ProductTableViewCell.m in Sources */,
 				0347CCE11C82172200A3D8A0 /* XMUser.m in Sources */,
 				2C6CF5DC1C625D30000BFC7B /* ProductListViewController.m in Sources */,
 				2C1408CB1C83A00D00698FF2 /* CartViewController.m in Sources */,
-				2C2124AC1C84F86D006ABDA5 /* RATableViewCell.m in Sources */,
 				2CC6AA2C1C61E02C009425BC /* PasswordNotFoundViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
