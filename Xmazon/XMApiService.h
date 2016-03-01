@@ -36,4 +36,6 @@
 
 -(void) refreshtoken:(BOOL) isTokenAppRequired success:(void(^)(void))success failure:(void(^)(void))failure;
 
+-(void)cheatGetAllProducts:(void(^)(NSArray *products))success failure:(void(^)(void))failure;
+
 @end

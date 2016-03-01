@@ -23,11 +23,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow* window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window = window;
+    XMApiService *apiService = [XMApiService new];
+            [apiService getToken];
+//    UINavigationController* nextController;
     
-    UINavigationController* loginNavigationController = [[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
+//    NSDictionary* userDefault = [[NSUserDefaults standardUserDefaults] objectForKey:USERDEFAULT_KEY_USER];
+//    if( userDefault == nil)
+//    {
+//        XMApiService *apiService = [XMApiService new];
+//        [apiService getToken];
+//        nextController = [[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
+//    }
+//    else
+//    {
+//        nextController = [[UINavigationController alloc]initWithRootViewController:[HomeViewController new]];
+//    }
+    UINavigationController* loginController = [[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
     UINavigationController* rearNavigationController = [[UINavigationController alloc] initWithRootViewController:[RearViewController new]];
     
-    SWRevealViewController* revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:loginNavigationController];
+    SWRevealViewController* revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:loginController];
     revealController.delegate = self;
     
     self.revealViewController = revealController;
@@ -35,9 +49,6 @@
     self.window.rootViewController = self.revealViewController;
     [self.window makeKeyAndVisible];
     
-    XMApiService *apiService = [XMApiService new];
-    [apiService getToken];
-
     
     return YES;
 }
