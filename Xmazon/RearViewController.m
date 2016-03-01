@@ -39,7 +39,12 @@
     if(section == 0)
         return @"";
     else
-        return @"Boutique";
+        return @"Boutiques";
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIView *backgroundSelectedCell = [[UIView alloc] init];
+    backgroundSelectedCell.backgroundColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.86 alpha:1.0];
+    [cell setSelectedBackgroundView:backgroundSelectedCell];
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString* cellIdentifier = @"Cell";
