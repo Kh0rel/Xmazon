@@ -9,6 +9,7 @@ platform :ios, '7.0'
 pod 'Mantle', '~> 2.0'
 pod 'AFNetworking', '~> 2.5'
 pod 'SWRevealViewController', '~> 2.3.0'
+pod 'RATreeView','~> 2.1.0'
 end
 
 target 'XmazonTests' do
