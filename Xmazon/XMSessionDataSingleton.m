@@ -9,7 +9,7 @@
 #import "XMSessionDataSingleton.h"
 
 @implementation XMSessionDataSingleton
-@synthesize currentSession = currentSession_;
+//@synthesize currentSession = currentSession_;
 @synthesize currentUser = currentUser_;
 //@synthesize userDefault = userDefault_;
 @synthesize numberTestRefreshToken = numberTestRefreshToken_;

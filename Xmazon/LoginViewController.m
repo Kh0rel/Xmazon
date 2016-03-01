@@ -7,6 +7,9 @@
 //
 
 #import "LoginViewController.h"
+static NSString* KEY_ACCESS_TOKEN = @"access_token";
+static NSString* USERDEFAULT_KEY_USER = @"user";
+
 
 @interface LoginViewController ()
 
@@ -17,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Xmazon";
-
+    self.navigationItem.hidesBackButton = YES;
     
 }
 
@@ -26,6 +29,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    NSDictionary* userDefault = [[NSUserDefaults standardUserDefaults] objectForKey:USERDEFAULT_KEY_USER];
+    if( userDefault != nil)
+    {
+        HomeViewController* homeController = [HomeViewController new];
+        [self.navigationController pushViewController:homeController animated:NO];
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -59,10 +71,10 @@
     }
 
 
-//    [apiService loginWithUsername:@"toto@gmail.com"
+//    [apiService loginWithUsername:@"totoa@gmail.com"
 //                      andPassword:@"toto"
 //                          success:^(id user) {
-//                              NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
+//                              NSLog(@"Login Success : %@", [[[NSUserDefaults standardUserDefaults] valueForKey:@"app"] valueForKey:@"access_token"]);
 ////                              
 ////                              [apiService refreshtoken];
 ////                              [apiService getAllProducts:^(NSArray *products) {
@@ -97,12 +109,12 @@
 //                              } failure:^{
 //                                  NSLog(@"GET ALL STORE FAILED");
 //                              }];
-//                          } andError:^(NSArray *errors) {
-//                              NSLog(@"Login FAILED : %@", errors);
+//                          } andError:^(void) {
+//                              NSLog(@"Login FAILED");
 //                              
 //                          }];
 //    
-//    
+    
 
 }
 

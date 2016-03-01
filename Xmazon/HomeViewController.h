@@ -12,6 +12,8 @@
 #import "XMSessionDataSingleton.h"
 #import "XMApiService.h"
 #import "XMProduct.h"
+#import "LoginViewController.h"
+
 @interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     NSArray* _products;
 }

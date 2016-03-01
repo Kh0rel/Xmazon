@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SWRevealViewController.h>
 #import "CartViewController.h"
+#import "LoginViewController.h"
 @interface ProfileViewController : UIViewController{
     UIDatePicker* _datePicker;
 }

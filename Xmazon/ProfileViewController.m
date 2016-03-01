@@ -14,6 +14,8 @@
 
 @implementation ProfileViewController
 @synthesize datePicker = _datePicker;
+static NSString* USERDEFAULT_KEY_USER = @"user";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Profil";
@@ -31,6 +33,13 @@
     
     self.navigationItem.rightBarButtonItem = cartButton;
     [self initDatePicker];
+    XMApiService* apiService = [XMApiService new];
+    [apiService getUser:^{
+        //
+    } failure:^{
+        //
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +78,13 @@
     //TODO
 }
 - (IBAction)deconnectAction:(id)sender {
-    //TODO
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+//    UIViewController *prevVC = [self.navigationController.viewControllers objectAtIndex:1];
+//
+    LoginViewController* loginController = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:loginController animated:YES];
+//    [self.navigationController popToViewController:prevVC animated:YES];
 }
 
 /*

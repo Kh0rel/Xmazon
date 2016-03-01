@@ -28,6 +28,7 @@ static NSString* TYPE_CLIENT_ID = @"client_id";
 static NSString* TYPE_CLIENT_SECRET = @"client_secret";
 
 static NSString* USERDEFAULT_KEY_USER = @"user";
+static NSString* USERDEFAULT_KEY_APP = @"app";
 
 static long MAX_TENTATIVE_REFRESH = 2;
 
@@ -41,8 +42,8 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
     [[manager POST:@"/oauth/token"
         parameters:parameters
            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-               [XMSessionDataSingleton sharedSession].currentSession = responseObject;
-               
+               [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:USERDEFAULT_KEY_APP];
+               [[NSUserDefaults standardUserDefaults] synchronize];
                [self refreshtoken:TRUE success:^{
                     NSLog(@"SUCCESS REFRESH");
                } failure:^{
@@ -55,12 +56,8 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 
 -(void) refreshtoken:(BOOL) isTokenAppRequired success:(void (^)(void))success failure:(void (^)(void))failure
 {
-//    if ( [[XMSessionDataSingleton sharedSession].currentSession objectForKey:KEY_REFRESH_TOKEN] == nil)
-//    {
-//        [self getToken];
-//        return;
-//    }
-    NSString* refresh_token = isTokenAppRequired  ?  [[XMSessionDataSingleton sharedSession].currentSession objectForKey:KEY_REFRESH_TOKEN] :[[NSUserDefaults standardUserDefaults] valueForKey:KEY_REFRESH_TOKEN];
+    NSString* refresh_token = isTokenAppRequired  ?  [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULT_KEY_APP] valueForKey:KEY_REFRESH_TOKEN] :[[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULT_KEY_USER] valueForKey:KEY_REFRESH_TOKEN];
+    
     NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE_REFRESH, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET, KEY_REFRESH_TOKEN: refresh_token};
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
     [[manager POST:@"/oauth/token"
@@ -68,7 +65,8 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
                if ( [NSUserDefaults standardUserDefaults] == nil || isTokenAppRequired)
                {
-                   [XMSessionDataSingleton sharedSession].currentSession = responseObject;
+                   [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:USERDEFAULT_KEY_APP];
+                   [[NSUserDefaults standardUserDefaults] synchronize];
                    NSLog(@"Refresh app token : %@", [responseObject objectForKey:KEY_ACCESS_TOKEN]);
                    success();
                }
@@ -123,7 +121,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 -(void) subscribe:(XMUser *)user withSuccessBlock:(void (^)(XMUser *))success failure:(void (^)(void))failure
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULT_KEY_APP] valueForKey:KEY_ACCESS_TOKEN];
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     
     NSDictionary *parameters = [MTLJSONAdapter JSONDictionaryFromModel:user error:nil];
@@ -159,7 +157,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 -(void) getUser:(void(^)(void))success failure:(void(^)(void))failure
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULT_KEY_APP] valueForKey:KEY_ACCESS_TOKEN];
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     
     [[manager GET:@"/user" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
@@ -192,7 +190,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 -(void) getStores:(void (^)(NSArray *))success failure:(void (^)(void))failure
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULT_KEY_APP] valueForKey:KEY_ACCESS_TOKEN];
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     
     [[manager GET:@"/store/list" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
@@ -226,7 +224,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 -(void) getCategoriesByIDStore:(NSString *)uid_store withSuccess:(void (^)(NSArray *))success andFailure:(void (^)(void))failure
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    NSString* accessToken = [[XMSessionDataSingleton sharedSession].currentSession valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULT_KEY_APP] valueForKey:KEY_ACCESS_TOKEN];
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     
     NSDictionary *parameters = @{@"store_uid":uid_store};
@@ -263,7 +261,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 -(void) getAllProducts:(void (^)(NSArray *))success failure:(void (^)(void))failure
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
-    NSString* accessToken = [[XMSessionDataSingleton sharedSession].userDefault valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[[NSUserDefaults standardUserDefaults] objectForKey:USERDEFAULT_KEY_USER] valueForKey:KEY_ACCESS_TOKEN];
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     
     [[manager GET:@"/product/list" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
@@ -300,7 +298,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
     //NSString* accessToken = [[XMSessionDataSingleton sharedSession].userDefault valueForKey:KEY_ACCESS_TOKEN];
-    NSString* accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:KEY_ACCESS_TOKEN];
+    NSString* accessToken = [[[NSUserDefaults standardUserDefaults] objectForKey:USERDEFAULT_KEY_USER] valueForKey:KEY_ACCESS_TOKEN];
 
     [manager.requestSerializer setValue:[@"Bearer " stringByAppendingString:accessToken] forHTTPHeaderField:@"Authorization"];
     NSDictionary *parameters = @{@"category_uid":uid_category};

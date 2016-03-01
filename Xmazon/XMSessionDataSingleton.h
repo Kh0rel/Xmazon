@@ -1,6 +1,6 @@
 //
 //  XMSessionDataSingleton.h
-//  Xmazon
+//  :
 //
 //  Created by ekino on 27/02/16.
 //  Copyright © 2016 com.esgi. All rights reserved.
@@ -14,14 +14,14 @@
 {
     @private
 //    NSUserDefaults* userDefault_;
-    NSDictionary* currentSession_;
+//    NSDictionary* currentSession_;
     XMUser* currentUser_;
     long numberTestRefreshToken_;
 }
 
 + (XMSessionDataSingleton *)sharedSession;
 
-@property(strong, nonatomic) NSDictionary *currentSession;
+//@property(strong, nonatomic) NSDictionary *currentSession;
 @property(strong, nonatomic) XMUser *currentUser;
 //@property(strong, nonatomic) NSUserDefaults* userDefault;
 @property(nonatomic, nonatomic) long numberTestRefreshToken;

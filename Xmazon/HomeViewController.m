@@ -16,11 +16,12 @@
 @implementation HomeViewController
 
 @synthesize products = _products;
-
+static NSString* KEY_ACCESS_TOKEN = @"access_token";
+static NSString* USERDEFAULT_KEY_USER = @"user";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Accueil";
-    [self loadProduct];
+   // [self loadProduct];
     SWRevealViewController *revealController = [self revealViewController];
     
     
