@@ -45,22 +45,88 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)subscribe:(id)sender {
-    XMUser *user = [XMUser alloc];
-    //Mettre les param des input
-    user.birthdate = @"31/08/93";
-    user.email = @"totoa@gmail.com";
-    user.firstname = @"toto";
-    user.lastname = @"tata";
-    user.password = @"toto";
+    if( [self verifField] )
+    {
+        XMUser* newUser = [self createUser];
+        XMApiService* apiService = [XMApiService alloc];
+        [apiService subscribe:newUser withSuccessBlock:^(XMUser *user) {
+            NSLog(@"Subscribe Success : %@", user);
+            [apiService loginWithUsername:newUser.email andPassword:newUser.password success:^(id user) {
+                HomeViewController* v = [HomeViewController new];
+                [self.navigationController pushViewController:v animated:YES];
+            } andError:^{
+                NSLog(@"Login automatic FAILED !");
+            }];
+        } failure:^{
+            NSLog(@"Subscribe FAILED !");
+        }];
+    }
     
-    XMApiService* apiService = [XMApiService alloc];
-    [apiService subscribe:user withSuccessBlock:^(XMUser *user) {
-        NSLog(@"Subscribe Success : %@", user);
-    } failure:^{
-        NSLog(@"Subscribe FAILED !");
-    }];
+//    XMUser *user = [XMUser alloc];
+//    //Mettre les param des input
+//    user.birthdate = @"31/08/93";
+//    user.email = @"totoa@gmail.com";
+//    user.firstname = @"toto";
+//    user.lastname = @"tata";
+//    user.password = @"toto";
+    
+//    XMApiService* apiService = [XMApiService alloc];
+//    [apiService subscribe:user withSuccessBlock:^(XMUser *user) {
+//        NSLog(@"Subscribe Success : %@", user);
+//    } failure:^{
+//        NSLog(@"Subscribe FAILED !");
+//    }];
 }
 
+-(XMUser*)createUser
+{
+    XMUser* user = [XMUser alloc];
+    user.birthdate = [[self tfBirthday] text];
+    user.lastname = [[self tfLastName] text];
+    user.firstname = [[self tfNom] text];
+    user.password = [[self tfPass] text];
+    user.email = [[self tfEmail] text];
+    
+    return user;
+}
+
+-(BOOL) verifField
+{
+    BOOL isOk = true;
+//    if([[self tfName] text] && [[[self tfName] text] length] == 0)
+//    {
+//        [self tfName].placeholder = @"Champ obligatoire";
+//        isOk &= FALSE;
+//    }
+    if([[self tfPass] text] && [[[self tfPass] text] length] == 0)
+    {
+        [self tfPass].placeholder = @"Champ obligatoire";
+        isOk &= FALSE;
+    }
+    if([[self tfVerifPass] text] && [[[self tfVerifPass] text] length] == 0)
+    {
+        [self tfVerifPass].placeholder = @"Champ obligatoire";
+        isOk &= FALSE;
+    }
+//    if([[self tfLastName] text] && [[[self tfLastName] text] length] == 0)
+//    {
+//        [self tfLastName].placeholder = @"Champ obligatoire";
+//        isOk &= FALSE;
+//    }
+    if([[self tfEmail] text] && [[[self tfEmail] text] length] == 0)
+    {
+        [self tfEmail].placeholder = @"Champ obligatoire";
+        isOk &= FALSE;
+    }
+    
+    if( [[self tfVerifPass] text] != [[self tfPass] text] )
+    {
+        [self tfVerifPass].placeholder = @"Not corresponding";
+        [self tfVerifPass].text= @"";
+        isOk &= FALSE;
+    }
+    return isOk;
+}
 /*
 #pragma mark - Navigation
 

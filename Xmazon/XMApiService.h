@@ -18,7 +18,7 @@
 @interface XMApiService : NSObject
 
 //+(XMApiService*)sharedInstance;
--(void)loginWithUsername:(NSString *) username andPassword: (NSString *)password success:(void(^)(id user))successBlock andError:(void(^)(NSArray *errors))errorBlock;
+-(void)loginWithUsername:(NSString *) username andPassword: (NSString *)password success:(void(^)(id user))successBlock andError:(void(^)(void))errorBlock;
 
 -(void) getToken;
 

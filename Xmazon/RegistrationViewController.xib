@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController">
@@ -10,6 +10,12 @@
                 <outlet property="RegistrationAction" destination="WK0-M6-xy9" id="yFS-Cs-nRS"/>
                 <outlet property="button_subscribe" destination="WK0-M6-xy9" id="y6L-0W-MOg"/>
                 <outlet property="dateTextField" destination="08g-aM-1Ym" id="aFB-YV-KbD"/>
+                <outlet property="tfBirthday" destination="08g-aM-1Ym" id="llI-aS-Oxl"/>
+                <outlet property="tfEmail" destination="i45-po-ett" id="cD2-xC-8ek"/>
+                <outlet property="tfLastName" destination="ljs-1z-WQ5" id="msH-1S-1iY"/>
+                <outlet property="tfNom" destination="qoU-wv-P6h" id="DVw-3g-5Sv"/>
+                <outlet property="tfPass" destination="27F-aj-b3R" id="9bG-vx-avM"/>
+                <outlet property="tfVerifPass" destination="hd4-Xn-wpU" id="bUu-Ru-cJ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

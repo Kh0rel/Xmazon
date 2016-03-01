@@ -53,11 +53,11 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
 
 -(void) refreshtoken:(BOOL) isTokenAppRequired success:(void (^)(void))success failure:(void (^)(void))failure
 {
-    if ( [[XMSessionDataSingleton sharedSession].currentSession objectForKey:KEY_REFRESH_TOKEN] == nil)
-    {
-        [self getToken];
-        return;
-    }
+//    if ( [[XMSessionDataSingleton sharedSession].currentSession objectForKey:KEY_REFRESH_TOKEN] == nil)
+//    {
+//        [self getToken];
+//        return;
+//    }
     NSString* refresh_token = isTokenAppRequired  ?  [[XMSessionDataSingleton sharedSession].currentSession objectForKey:KEY_REFRESH_TOKEN] : [[XMSessionDataSingleton sharedSession].userDefault objectForKey:KEY_REFRESH_TOKEN];
     NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE_REFRESH, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET, KEY_REFRESH_TOKEN: refresh_token};
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
@@ -81,7 +81,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
            }] resume];
 }
 
--(void) loginWithUsername:(NSString *)username andPassword:(NSString *)password success:(void (^)(id))successBlock andError:(void (^)(NSArray *))errorBlock
+-(void) loginWithUsername:(NSString *)username andPassword:(NSString *)password success:(void (^)(id))successBlock andError:(void (^)(void))errorBlock
 {
     NSDictionary *parameters = @{TYPE_GRANT_TYPE: GRANT_TYPE_LOGIN, TYPE_CLIENT_ID: CLIENT_ID, TYPE_CLIENT_SECRET: CLIENT_SECRET, @"username":username, @"password":password};
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_STRING]];
@@ -110,6 +110,7 @@ static NSString* URL_STRING = @"http://xmazon.appspaces.fr";
               {
                   NSLog(@"FAILED loginWithUsername %li",  [[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode]);
                   [XMSessionDataSingleton sharedSession].numberTestRefreshToken = 0;  // Il y a un autre pb qui n'est pas lié avec le refresh, donc on send message a l'user et on arrete de faire des refresh, reinit token a 0
+                  errorBlock();
               }
           }] resume];
 }
