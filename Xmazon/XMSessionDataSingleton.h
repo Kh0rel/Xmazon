@@ -13,7 +13,7 @@
 @interface XMSessionDataSingleton : NSObject
 {
     @private
-    NSUserDefaults* userDefault_;
+//    NSUserDefaults* userDefault_;
     NSDictionary* currentSession_;
     XMUser* currentUser_;
     long numberTestRefreshToken_;
@@ -23,7 +23,7 @@
 
 @property(strong, nonatomic) NSDictionary *currentSession;
 @property(strong, nonatomic) XMUser *currentUser;
-@property(strong, nonatomic) NSUserDefaults* userDefault;
+//@property(strong, nonatomic) NSUserDefaults* userDefault;
 @property(nonatomic, nonatomic) long numberTestRefreshToken;
 
 
