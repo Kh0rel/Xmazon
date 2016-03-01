@@ -37,63 +37,116 @@
 */
 - (IBAction)passwordNotFoundAction:(id)sender {
     PasswordNotFoundViewController* v = [PasswordNotFoundViewController new];
-    NSLog(@"accept_token : %@", [[XMSessionDataSingleton sharedSession].currentSession objectForKey:@"refresh_token"]);
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)registrationAction:(id)sender {
-    
     RegistrationViewController* v = [RegistrationViewController new];
     [self.navigationController pushViewController:v animated:YES];
 }
 - (IBAction)loginAction:(id)sender {
     XMApiService* apiService = [XMApiService alloc];
     
-    [apiService loginWithUsername:@"toto@gmail.com"
-                      andPassword:@"toto"
-                          success:^(id user) {
-                              NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
+    if( [self verifField] )
+    {
+        NSLog(@"%@",[[self tfEmail] text]);
+        [apiService loginWithUsername:[[self tfEmail] text]
+                    andPassword:[[self tfPwd] text] success:^(id user) {
+                        HomeViewController* v = [HomeViewController new];
+                        [self.navigationController pushViewController:v animated:YES];
+                    } andError:^(void) {
+                        [self displayToastWithMessage:@"Bad login"];
+                    }];
+
+    }
+    
+    
+//    [apiService loginWithUsername:@"toto@gmail.com"
+//                      andPassword:@"toto"
+//                          success:^(id user) {
+//                              NSLog(@"Login Success : %@", [[XMSessionDataSingleton sharedSession].currentSession valueForKey:@"access_token"]);
+////                              
+////                              [apiService refreshtoken];
+////                              [apiService getAllProducts:^(NSArray *products) {
+////                                  NSLog(@"GET ALL products : %@", products);
+////                              } failure:^{
+////                                  NSLog(@"GET ALL products FAILED");
+////                              }];
 //                              
-//                              [apiService refreshtoken];
-//                              [apiService getAllProducts:^(NSArray *products) {
-//                                  NSLog(@"GET ALL products : %@", products);
+//                              
+//                              
+//                              [apiService getStores:^(NSArray *stores) {
+//                                  NSLog(@"GET ALL STORE Success : %@", stores);
+//                                  for (XMStore* store in stores) {
+//                                      [apiService getCategoriesByIDStore:store.uid withSuccess:^(NSArray *categories) {
+//                                          NSLog(@"GET ALL Categories by store id Success : %@", categories);
+//                                          
+//                                          for (XMCategory* cat in categories) {
+//                                                       [apiService getProductsByCategoryID:cat.uid withSuccess:^(NSArray *products) {
+//                                                           NSLog(@"GET products by cat : %@", products);
+//                                                       } failure:^{
+//                                                           NSLog(@"GET products by cat FAILED");
+//                                                       }];
+//                                          }
+//                                 
+//                                          
+//                                      } andFailure:^{
+//                                          NSLog(@"GET ALL Categories by store id FAILED");
+//                                      }];
+//                                  }
+//                                  
+//                                  
 //                              } failure:^{
-//                                  NSLog(@"GET ALL products FAILED");
+//                                  NSLog(@"GET ALL STORE FAILED");
 //                              }];
-                              
-                              
-                              
-                              [apiService getStores:^(NSArray *stores) {
-                                  NSLog(@"GET ALL STORE Success : %@", stores);
-                                  for (XMStore* store in stores) {
-                                      [apiService getCategoriesByIDStore:store.uid withSuccess:^(NSArray *categories) {
-                                          NSLog(@"GET ALL Categories by store id Success : %@", categories);
-                                          
-                                          for (XMCategory* cat in categories) {
-                                                       [apiService getProductsByCategoryID:cat.uid withSuccess:^(NSArray *products) {
-                                                           NSLog(@"GET products by cat : %@", products);
-                                                       } failure:^{
-                                                           NSLog(@"GET products by cat FAILED");
-                                                       }];
-                                          }
-                                 
-                                          
-                                      } andFailure:^{
-                                          NSLog(@"GET ALL Categories by store id FAILED");
-                                      }];
-                                  }
-                                  
-                                  
-                              } failure:^{
-                                  NSLog(@"GET ALL STORE FAILED");
-                              }];
-                          } andError:^(NSArray *errors) {
-                              NSLog(@"Login FAILED : %@", errors);
-                              
-                          }];
-    
-    
-    HomeViewController* v = [HomeViewController new];
-    [self.navigationController pushViewController:v animated:YES];
+//                          } andError:^(NSArray *errors) {
+//                              NSLog(@"Login FAILED : %@", errors);
+//                              
+//                          }];
+//    
+//    
+
 }
 
+-(BOOL) verifField
+{
+    BOOL isOk = true;
+    if([[self tfEmail] text] && [[[self tfEmail] text] length] == 0)
+    {
+        [self tfEmail].placeholder = @"Champ obligatoire";
+        isOk &= FALSE;
+    }
+    if([[self tfPwd] text] && [[[self tfPwd] text] length] == 0)
+    {
+        [self tfPwd].placeholder = @"Champ obligatoire";
+        isOk &= FALSE;
+    }
+    return isOk;
+}
+
+-(void)displayToastWithMessage:(NSString *)toastMessage
+{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        UIWindow * keyWindow = [[UIApplication sharedApplication] keyWindow];
+        UILabel *toastView = [[UILabel alloc] init];
+        toastView.text = toastMessage;
+        toastView.textAlignment = NSTextAlignmentCenter;
+        toastView.frame = CGRectMake(0.0, 0.0, keyWindow.frame.size.width/2.0, 100.0);
+        toastView.layer.cornerRadius = 10;
+        toastView.layer.masksToBounds = YES;
+        toastView.center = keyWindow.center;
+        
+        [keyWindow addSubview:toastView];
+        
+        [UIView animateWithDuration: 3.0f
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseOut
+                         animations: ^{
+                             toastView.alpha = 0.0;
+                         }
+                         completion: ^(BOOL finished) {
+                             [toastView removeFromSuperview];
+                         }
+         ];
+    }];
+}
 @end

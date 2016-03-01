@@ -12,6 +12,11 @@
 #import "HomeViewController.h"
 #import "XMSessionDataSingleton.h"
 #import "XMApiService.h"
-@interface LoginViewController : UIViewController
 
+@interface LoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
+@property (weak, nonatomic) IBOutlet UITextField *tfPwd;
+
+-(BOOL) verifField;
+-(void)displayToastWithMessage:(NSString *)toastMessage;
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "XMUser.h"
 #import "XMApiService.h"
+#import "HomeViewController.h"
+
 
 @interface RegistrationViewController : UIViewController{
     UIDatePicker* _datePicker;
@@ -18,8 +20,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *button_subscribe;
 @property (strong, nonatomic) IBOutlet UITextField *dateTextField;
 @property(strong,nonatomic)UIDatePicker* datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
+@property (weak, nonatomic) IBOutlet UITextField *tfPass;
+@property (weak, nonatomic) IBOutlet UITextField *tfVerifPass;
+@property (weak, nonatomic) IBOutlet UITextField *tfNom;
+@property (weak, nonatomic) IBOutlet UITextField *tfLastName;
+@property (weak, nonatomic) IBOutlet UITextField *tfBirthday;
 
 -(void)showSelectedDate;
 -(void)initDatePicker;
+-(XMUser*) createUser;
 @end
 
